@@ -28,7 +28,7 @@ const Blog = () => {
                         </div>
                     </div>
                 </div>
-                <div className="lg:flex gap-10 items-center justify-center pt-[100px] ">
+                <div className="lg:flex gap-10 items-center justify-center pt-[100px] pb-20 ">
                     <div className="space-y-6">
                         <img src="https://i.ibb.co/DVTX1TY/Icon-1.png" alt="" />
                         <h1 className="text-4xl text-white font-semibold mb-4">Research Insights Blogs</h1>

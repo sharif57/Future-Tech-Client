@@ -38,7 +38,7 @@ const Posts = () => {
                     </div>
                 </div>
                 <div>
-                    <button className="btn btn-outline flex gap-2">View All Blogs <FaArrowRight className="size-7 text-yellow-500" />
+                    <button className="btn btn-outline flex gap-2">View Blog <FaArrowRight className="size-7 text-yellow-500" />
                     </button>
                 </div>
             </div>
@@ -75,11 +75,11 @@ const Posts = () => {
                     </div>
                 </div>
                 <div>
-                    <button className="btn btn-outline flex gap-2">View All Blogs <FaArrowRight className="size-7 text-yellow-500" />
+                    <button className="btn btn-outline flex gap-2">View Blog <FaArrowRight className="size-7 text-yellow-500" />
                     </button>
                 </div>
             </div>
-            <div className="flex  justify-between items-center pt-12 pb-12 border border-dashed border-b-0 rounded-lg p-5 mb-2">
+            <div className="flex  justify-between items-center pt-12 pb-12 border border-dashed border-b-0 rounded-lg p-5 ">
                 <div className="flex items-center gap-2 ">
                     <img className="size-20 rounded-full" src="https://i.ibb.co/z6FB8pB/20240502162307521-jpeg.jpg" alt="" />
                     <div>
@@ -112,7 +112,7 @@ const Posts = () => {
                     </div>
                 </div>
                 <div>
-                    <button className="btn btn-outline flex gap-2">View All Blogs <FaArrowRight className="size-7 text-yellow-500" />
+                    <button className="btn btn-outline flex gap-2">View Blog <FaArrowRight className="size-7 text-yellow-500" />
                     </button>
                 </div>
             </div>

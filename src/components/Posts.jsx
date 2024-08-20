@@ -5,7 +5,7 @@ import { LuSendHorizonal } from "react-icons/lu";
 const Posts = () => {
     return <div className="bg-[#141414]">
         <div className="container mx-auto">
-            <div className="flex  justify-between items-center pt-12 pb-12 border border-dashed border-b-0 rounded-lg p-5 mb-2">
+            <div className="flex  justify-between items-center pt-12 pb-12 border border-green-200 border-dashed border-b-0 rounded-lg p-5 mb-2">
                 <div className="flex items-center gap-2 ">
                     <img className="size-20 rounded-full" src="https://i.ibb.co/z6FB8pB/20240502162307521-jpeg.jpg" alt="" />
                     <div>

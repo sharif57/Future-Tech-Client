@@ -3,6 +3,7 @@ import Blog from "./Blog";
 import Explore from "./Explore";
 import Features from "./Features";
 import Posts from "./Posts";
+import Resources from "./Resources";
 import Unlock from "./Unlock";
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
         <Explore></Explore>
         <Posts></Posts>
         <Unlock></Unlock>
+        <Resources></Resources>
         
     </div>;
 };

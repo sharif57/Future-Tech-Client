@@ -31,7 +31,7 @@ const Resources = () => {
                         <p>Topics include AI in education (25%), renewable energy (20%), healthcare (15%), space exploration (25%), and biotechnology (15%).</p>
                     </div>
                     {/* <img src="https://i.ibb.co/DkbYqMT/Image.png" alt="" /> */}
-                    <video src="/public/video-2.mp4" controls autoPlay autoFocus className="w-full h-96 object-cover rounded-lg">
+                    <video src="/public/video-3.mp4" controls autoPlay autoFocus className="w-full h-96 object-cover rounded-lg">
                         Your browser does not support the video tag.
                     </video>
 

@@ -4,6 +4,7 @@ import Explore from "./Explore";
 import Features from "./Features";
 import Posts from "./Posts";
 import Resources from "./Resources";
+import Review from "./Review";
 import Unlock from "./Unlock";
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
         <Posts></Posts>
         <Unlock></Unlock>
         <Resources></Resources>
+        <Review></Review>
         
     </div>;
 };

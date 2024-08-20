@@ -1,6 +1,6 @@
 const Footer = () => {
-    return <div>
-        <footer className="footer bg-base-200 text-base-content p-10">
+    return <div className="bg-base-300 text-base-content p-10">
+        <footer className="footer  container mx-auto">
             <nav>
                 <h6 className="footer-title">Services</h6>
                 <a className="link link-hover">Branding</a>
@@ -32,7 +32,7 @@ const Footer = () => {
                             type="text"
                             placeholder="username@site.com"
                             className="input input-bordered join-item" />
-                        <button className="btn btn-primary join-item">Subscribe</button>
+                        {/* <button className="btn btn-primary join-item">Subscribe</button> */}
                     </div>
                 </fieldset>
             </form>

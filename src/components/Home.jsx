@@ -5,6 +5,7 @@ import Features from "./Features";
 import Posts from "./Posts";
 import Resources from "./Resources";
 import Review from "./Review";
+import Review2 from "./review2";
 import Unlock from "./Unlock";
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
         <Unlock></Unlock>
         <Resources></Resources>
         <Review></Review>
+        <Review2></Review2>
         
     </div>;
 };

@@ -2,6 +2,7 @@ import Banner from "./Banner";
 import Blog from "./Blog";
 import Explore from "./Explore";
 import Features from "./Features";
+import Part from "./Part";
 import Posts from "./Posts";
 import Resources from "./Resources";
 import Review from "./Review";
@@ -19,6 +20,7 @@ const Home = () => {
         <Resources></Resources>
         <Review></Review>
         <Review2></Review2>
+        <Part></Part>
         
     </div>;
 };

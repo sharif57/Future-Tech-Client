@@ -135,7 +135,7 @@ const News = () => {
                 </div>
             </div>
             <Posts></Posts>
-        <Visual></Visual>
+            <Visual></Visual>
         </div>
 
     </div>;

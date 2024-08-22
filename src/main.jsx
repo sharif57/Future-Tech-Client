@@ -8,19 +8,29 @@ import {
 import Layout from './Layout/Layout';
 import Home from './components/Home';
 import News from './Page/News/News';
+import Podcasts from './Page/News/Podcasts/Podcasts';
+import ResourcesNav from './Page/ResourcesNav';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
-    children:[
+    children: [
       {
         path: '/',
-        element:<Home></Home>
+        element: <Home></Home>
       },
       {
-        path:'/news',
+        path: '/news',
         element: <News></News>
+      },
+      {
+        path: '/podcasts',
+        element: <Podcasts></Podcasts>
+      },
+      {
+        path: '/resourcesNav',
+        element:<ResourcesNav></ResourcesNav>
       }
     ]
   },
@@ -29,5 +39,5 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
-    </StrictMode>,
+  </StrictMode>,
 )

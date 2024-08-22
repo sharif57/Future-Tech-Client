@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
     return <div className="bg-[#191919]">
         <div className="navbar  container mx-auto">
@@ -21,7 +23,7 @@ const Navbar = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         <li><a>Home</a></li>
-                        <li><a>News</a></li>
+                        <li><a><Link to={'/news'}>News</Link></a></li>
                         <li><a>Podcasts</a></li>
                         <li><a>Resources</a></li>
                     </ul>
@@ -30,10 +32,10 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                <li><a>Home</a></li>
-                        <li><a>News</a></li>
-                        <li><a>Podcasts</a></li>
-                        <li><a>Resources</a></li>
+                    <li><a><Link to={'/'}>Home</Link></a></li>
+                    <li><a><Link to={'/news'}>News</Link></a></li>
+                    <li><a>Podcasts</a></li>
+                    <li><a>Resources</a></li>
                 </ul>
             </div>
             <div className="navbar-end">

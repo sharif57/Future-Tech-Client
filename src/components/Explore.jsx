@@ -1,7 +1,7 @@
 import { FaArrowRight } from "react-icons/fa";
 
 const Explore = () => {
-    return <div className="bg-[#191919] py-12 px-12">
+    return <div className="bg-[#191919] py-16 px-16">
         <div className="container mx-auto">
             <div className="flex  justify-between items-center">
                 <div>

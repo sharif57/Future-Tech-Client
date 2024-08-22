@@ -1,5 +1,3 @@
-import { FaArrowRight } from "react-icons/fa";
-import { FaArrowTrendUp } from "react-icons/fa6";
 
 const Part = () => {
     return <div className="bg-[#191919] py-16 px-16">
@@ -21,7 +19,7 @@ const Part = () => {
                         <h1 className="text-xl text-white font-semibold mb-2">Resource Access</h1>
                         <p>Visitors can access a wide range of resources, including ebooks, whitepapers, reports.</p>
                     </div>
-                    <FaArrowRight className="bg-yellow-300 text-black p-4 rounded-lg"></FaArrowRight>
+                    <img className="p-4 rounded-lg size-20" src="/public/Button.png" alt="" />
 
                 </div>
                 <div className="flex bg-[#191919] p-10 rounded-lg">
@@ -29,14 +27,15 @@ const Part = () => {
                         <h1 className="text-xl text-white font-semibold mb-2"> Community Forum</h1>
                         <p>Join our active community forum to discuss industry trends, share insights, and collaborate with peers.</p>
                     </div>
-                    <FaArrowRight className="bg-yellow-300 p-4 rounded-lg"></FaArrowRight>
+                    <img className="p-4 rounded-lg size-20" src="/public/Button.png" alt="" />
                 </div>
                 <div className="flex bg-[#191919] p-10 rounded-lg">
                     <div>
                         <h1 className="text-xl text-white mb-2 font-semibold">Tech Events</h1>
                         <p>Stay updated on upcoming tech events, webinars, and conferences to enhance your knowledge.</p>
                     </div>
-                    <FaArrowRight className="bg-yellow-300 text-black p-4 rounded-lg"></FaArrowRight>
+                    {/* <FaArrowRight className="bg-yellow-300 text-black p-4 rounded-lg"></FaArrowRight> */}
+                    <img className="p-4 rounded-lg size-20" src="/public/Button.png" alt="" />
                 </div>
             </div>
         </div>

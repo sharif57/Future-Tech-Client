@@ -2,6 +2,7 @@ import { FaArrowRight, FaRegCommentDots } from "react-icons/fa";
 import { GiLoveHowl } from "react-icons/gi";
 import { LuSendHorizonal } from "react-icons/lu";
 import Posts from "../../components/Posts";
+import Visual from "./Visual";
 
 const News = () => {
     return <div className="bg-[#141414]">
@@ -134,6 +135,7 @@ const News = () => {
                 </div>
             </div>
             <Posts></Posts>
+        <Visual></Visual>
         </div>
 
     </div>;

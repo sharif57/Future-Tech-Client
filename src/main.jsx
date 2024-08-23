@@ -10,6 +10,8 @@ import Home from './components/Home';
 import News from './Page/News/News';
 import Podcasts from './Page/News/Podcasts/Podcasts';
 import ResourcesNav from './Page/ResourcesNav';
+import Login from './Page/Login';
+import Register from './Page/Register';
 
 const router = createBrowserRouter([
   {
@@ -29,8 +31,16 @@ const router = createBrowserRouter([
         element: <Podcasts></Podcasts>
       },
       {
-        path: '/resourcesNav',
+        path: '/resNav',
         element:<ResourcesNav></ResourcesNav>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
     ]
   },

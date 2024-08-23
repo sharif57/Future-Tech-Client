@@ -35,11 +35,11 @@ const Navbar = () => {
                     <li><a><Link to={'/'}>Home</Link></a></li>
                     <li><a><Link to={'/news'}>News</Link></a></li>
                     <li><a><Link to={'/podcasts'}>Podcasts</Link></a></li>
-                    <li><a> <Link to={'/resourcesNav'}>Resources</Link></a></li>
+                    <li><a> <Link to={'/resNav'}>Resources</Link></a></li>
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn btn-warning">Login</a>
+                <button className="btn btn-warning"><Link to={'/login'}>Login</Link></button>
             </div>
         </div>
     </div>;

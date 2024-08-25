@@ -15,6 +15,7 @@ import Register from './Page/Register';
 import BlogPostForm from './components/BlogPostForm';
 import Review2 from './components/review2';
 import AllReviews from './components/AllReviews';
+import AuthProvider from './AuthProvider/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/allReviews',
-        element:<AllReviews></AllReviews>,
+        element: <AllReviews></AllReviews>,
         loader: () => fetch('http://localhost:5000/reviews')
       }
     ]
@@ -64,7 +65,7 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <AuthProvider>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </AuthProvider>
 )

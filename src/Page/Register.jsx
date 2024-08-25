@@ -1,6 +1,61 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
+
+    const { registerUser, updateUserProfile } = useContext(AuthContext)
+    const [error, setError] = useState('')
+    const [showPassword, setShowPassword] = useState('')
+    const location = useLocation()
+    const navigate = useNavigate()
+
+
+    const handleRegister = (e) => {
+        e.preventDefault()
+        const name = e.target.name.value;
+        const photo = e.target.photo.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(name, photo, email, password);
+
+
+        if (/^(?=.*[A-Z])(?=.*[a-z]).{6,}$/.test(password)) {
+            setError(
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'user login successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
+
+            );
+            registerUser(email, password)
+                .then(() => {
+                    navigate(location?.state ? location.state : '/')
+                    updateUserProfile(name, photo)
+                })
+        }
+
+        else {
+            setError(
+                // alert('Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long.')
+                setError(Swal.fire({
+                    title: 'Error!',
+                    text: 'Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long',
+                    icon: 'error',
+                    confirmButtonText: 'Try aging'
+                }))
+            );
+            return;
+
+        }
+        setError('')
+
+
+    }
+
     return <div>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -15,14 +70,16 @@ const Register = () => {
             </div>
 
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                <form action="#" method="POST" className="space-y-6">
+                {
+                    error && <div>{error}</div>
+                }
+                <form onSubmit={handleRegister} action="#" method="POST" className="space-y-6">
                     <div>
                         <label className="block text-sm font-medium leading-6 text-white">
                             Name
                         </label>
                         <div className="mt-2">
                             <input
-                                id="email"
                                 name="name"
                                 type="text"
                                 placeholder="Enter your name"
@@ -32,12 +89,11 @@ const Register = () => {
                         </div>
                     </div>
                     <div>
-                        <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">
+                        <label className="block text-sm font-medium leading-6 text-white">
                             Photo Url
                         </label>
                         <div className="mt-2">
                             <input
-                                id="email"
                                 name="photo"
                                 type="text"
                                 placeholder="Enter your photo url"
@@ -52,7 +108,6 @@ const Register = () => {
                         </label>
                         <div className="mt-2">
                             <input
-                                id="email"
                                 name="email"
                                 type="email"
                                 placeholder="Enter your email"
@@ -72,7 +127,6 @@ const Register = () => {
                         </div>
                         <div className="mt-2">
                             <input
-                                id="password"
                                 name="password"
                                 type="password"
                                 placeholder="Enter your password"

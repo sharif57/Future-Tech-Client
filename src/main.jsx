@@ -12,6 +12,9 @@ import Podcasts from './Page/News/Podcasts/Podcasts';
 import ResourcesNav from './Page/ResourcesNav';
 import Login from './Page/Login';
 import Register from './Page/Register';
+import BlogPostForm from './components/BlogPostForm';
+import Review2 from './components/review2';
+import AllReviews from './components/AllReviews';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/resNav',
-        element:<ResourcesNav></ResourcesNav>
+        element: <ResourcesNav></ResourcesNav>
       },
       {
         path: '/login',
@@ -41,6 +44,20 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/bookPostForm',
+        element: <BlogPostForm></BlogPostForm>
+      },
+      {
+        path: '/review2',
+        element: <Review2></Review2>,
+        loader: () => fetch('http://localhost:5000/reviews')
+      },
+      {
+        path: '/allReviews',
+        element:<AllReviews></AllReviews>,
+        loader: () => fetch('http://localhost:5000/reviews')
       }
     ]
   },

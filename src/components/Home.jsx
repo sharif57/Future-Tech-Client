@@ -22,7 +22,6 @@ const Home = () => {
         <Resources></Resources>
         <Review></Review>
         <Review2></Review2>
-        
     </div>;
 };
 export default Home;

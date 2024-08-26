@@ -16,6 +16,8 @@ import BlogPostForm from './components/BlogPostForm';
 import Review2 from './components/review2';
 import AllReviews from './components/AllReviews';
 import AuthProvider from './AuthProvider/AuthProvider';
+import AllPostData from './components/AllPostData';
+import PostDetails from './components/PostDetails';
 
 const router = createBrowserRouter([
   {
@@ -47,7 +49,7 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
-        path: '/bookPostForm',
+        path: '/blogPostForm',
         element: <BlogPostForm></BlogPostForm>
       },
       {
@@ -59,6 +61,16 @@ const router = createBrowserRouter([
         path: '/allReviews',
         element: <AllReviews></AllReviews>,
         loader: () => fetch('http://localhost:5000/reviews')
+      },
+      {
+        path: '/allPostData',
+        element: <AllPostData></AllPostData>,
+        loader: ()=> fetch('http://localhost:5000/post')
+      },
+      {
+        path: '/postDetails/:id',
+        element: <PostDetails></PostDetails>,
+        loader: ({params})=> fetch(`http://localhost:5000/post/${params.id}`)
       }
     ]
   },

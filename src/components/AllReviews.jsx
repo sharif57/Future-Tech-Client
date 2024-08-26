@@ -11,6 +11,17 @@ const AllReviews = () => {
             .catch((error) => console.error('Error fetching reviews:', error));
     }, []);
     return <div className="bg-[#141414]">
+        <div className="bg-[#191919] py-16 px-16">
+            <div className="container mx-auto">
+                <div className="flex  justify-between items-center ">
+                    <div className="w-2/3">
+                        <button className="bg-[#333333] p-2 rounded-md text-white font-medium">What Our Readers Say</button>
+                        <h1 className="text-5xl font-semibold text-white mt-3">Real Words from Real Readers</h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <div className="container mx-auto p-16 pl-0 pr-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {reviews.map(review => (
                 <div key={review._id} className="flex flex-col justify-start bg-[#191919] pt-5 rounded-lg">

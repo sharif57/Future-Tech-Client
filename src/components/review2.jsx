@@ -13,6 +13,7 @@ const Review2 = () => {
 
     return (
         <div className="bg-[#141414]">
+            
             <div className="container mx-auto p-16 pl-0 pr-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {reviews.slice(0,6).map(review => (
                     <div key={review._id} className="flex flex-col justify-start bg-[#191919] pt-5 rounded-lg">

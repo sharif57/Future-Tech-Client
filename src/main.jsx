@@ -18,6 +18,7 @@ import AllReviews from './components/AllReviews';
 import AuthProvider from './AuthProvider/AuthProvider';
 import AllPostData from './components/AllPostData';
 import PostDetails from './components/PostDetails';
+import Dashboard from './Dashboard/Dashboard';
 
 const router = createBrowserRouter([
   {
@@ -74,6 +75,15 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path:"/dashboard",
+    element:<Dashboard></Dashboard>,
+    children:[
+      {
+        
+      }
+    ]
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(

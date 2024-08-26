@@ -12,13 +12,13 @@ const BlogPostForm = () => {
         const email = user?.email;
         const image = user?.photoURL;
         const title = e.target.title.value;
+        const category = e.target.category.value;
         const introduction = e.target.introduction.value;
         const currentTime = new Date();
-        const table = e.target.table.value;
         const photo = e.target.photo.value;
         const description = e.target.description.value;
 
-        const newPost = { name, email, image, title, introduction, currentTime, table, photo, description }
+        const newPost = { name, email, image, title, category, introduction, currentTime, photo, description }
         // console.log(newPost);
 
         fetch('http://localhost:5000/post', {
@@ -63,6 +63,19 @@ const BlogPostForm = () => {
                     <form onSubmit={handlePost}>
 
 
+                        {/* category */}
+                        <div className="mb-4">
+                            <label className="block text-white  font-medium mb-2" htmlFor="title">
+                                Category
+                            </label>
+                            <input
+                                id="title"
+                                type="text"
+                                name="category"
+                                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                        </div>
+
                         {/* Title */}
                         <div className="mb-4">
                             <label className="block text-white  font-medium mb-2" htmlFor="title">
@@ -77,6 +90,7 @@ const BlogPostForm = () => {
                             />
                         </div>
 
+
                         {/* Introduction */}
                         <div className="mb-4">
                             <label className="block text-white  font-medium mb-2" htmlFor="introduction">
@@ -89,34 +103,9 @@ const BlogPostForm = () => {
                             />
                         </div>
 
-                        {/* Reading Time */}
-                        {/* <div className="mb-4">
-                            <label className="block text-white  font-medium mb-2" htmlFor="reading_time">
-                                Reading Time
-                            </label>
-                            <input
-                                id="reading_time"
-                                type="text"
-                                name="readingTime"
-                                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            />
-                        </div> */}
-
-                        {/* Author Name */}
-                        {/* <div className="mb-4">
-                            <label className="block text-white  font-medium mb-2" htmlFor="author_name">
-                                Author Name
-                            </label>
-                            <input
-                                id="author_name"
-                                type="text"
-                                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-
-                            />
-                        </div> */}
 
                         {/* Table of Contents */}
-                        <div className="mb-4">
+                        {/* <div className="mb-4">
                             <label className="block text-white  font-medium mb-2" htmlFor="table_of_contents">
                                 Table of Contents
                             </label>
@@ -126,7 +115,7 @@ const BlogPostForm = () => {
                                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 
                             />
-                        </div>
+                        </div> */}
 
                         {/* Image URL */}
                         <div className="mb-4">

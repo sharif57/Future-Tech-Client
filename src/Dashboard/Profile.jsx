@@ -28,7 +28,7 @@ const Profile = () => {
 
     return <div className="">
         <div
-            className="group hover:saturate-100 saturate-0 transition-[filter] relative w-[248px] h-[318px] bg-[#FAEDE4] font-['Robot_Flex'] border-b-2 border-b-[#F04E29]">
+            className="group mx-auto hover:saturate-100 saturate-0 transition-[filter] relative w-[248px] h-[318px] bg-[#FAEDE4] font-['Robot_Flex'] border-b-2 border-b-[#F04E29]">
             <img
                 className="group-hover:rounded-br-[100px] rounded-br-[0px] h-[200px] w-full bg-cover object-cover transition-[border-radius]"
                 src={user?.photoURL} />
@@ -61,15 +61,53 @@ const Profile = () => {
 
             {/* Conditional Layout Section */}
             {isAlternateLayout ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2  gap-8 mt-12">
                     {items.map((item) => (
-                        <div key={item._id} className="relative flex flex-col overflow-hidden rounded-lg bg-blue-500 text-white shadow-lg">
-                            <div className="p-6">
-                                <h4 className="text-2xl font-bold">{item.title}</h4>
-                                <p className="mt-3 text-lg">{item.description}</p>
-                            </div>
-                            <div className="p-6 bg-blue-700">
-                                <p>{item.date}</p>
+                        <div key={item._id} className="relative inline-block">
+                        
+
+                            {/* Profile Info Popover */}
+                            <div
+                                data-popover="profile-info-popover"
+                                className="absolute mt-2  whitespace-normal break-words rounded-lg border border-blue-gray-50 bg-[#141414] p-4 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
+                            >
+                                <div className="flex items-center justify-between gap-4 mb-2">
+                                    <img
+                                        src={item.image}
+                                        alt="Tania Andrew"
+                                        className="relative inline-block object-cover object-center w-12 h-12 rounded-full"
+                                    />
+                                   <Link to={`/postDetails/${item._id}`} className="btn btn-warning">Read</Link>
+                                </div>
+                                <h6 className="flex items-center gap-2 mb-2 font-sans text-base antialiased font-medium leading-relaxed tracking-normal text-blue-gray-900">
+                                    <span>{user?.displayName}</span> •{" "}
+                                    <a className="text-sm text-blue-gray-700" href="#">
+                                        {item.category}
+                                    </a>
+                                </h6>
+                                <p className="block font-sans text-sm antialiased font-normal leading-normal text-white">
+                                    {item.title.slice(0,130)}
+                                </p>
+                                <div className="flex items-center gap-8 pt-4 mt-6 border-t border-blue-gray-50">
+                                    <p className="flex items-center gap-1 font-sans text-xs antialiased font-normal text-gray-200">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"  stroke="currentColor"
+                                            aria-hidden="true" className="-mt-0.5 h-3.5 w-3.5">
+                                            <path  d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                            <path 
+                                                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path>
+                                        </svg>
+                                        Bangladesh
+                                    </p>
+                                    <a href="#" className="flex items-center gap-1 font-sans text-xs antialiased font-normal text-gray-200">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                            aria-hidden="true" className="-mt-0.5 h-3.5 w-3.5">
+                                            <path 
+                                                d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z">
+                                            </path>
+                                        </svg>
+                                        Global Tech
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     ))}

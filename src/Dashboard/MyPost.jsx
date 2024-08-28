@@ -2,18 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyPost = () => {
     const { user } = useContext(AuthContext);
     const [items, setItems] = useState([]);
-
-
-
-    // useEffect(()=>{
-    //     fetch(`http://localhost:5000/post?email=${user?.email}`)
-    //     .then(res => res.json())
-    //     .then(data => console.log(data))
-    // },[user])
 
     useEffect(() => {
         axios(`http://localhost:5000/posts/${user?.email}`)
@@ -22,7 +15,45 @@ const MyPost = () => {
             })
     }, [user])
 
-    console.log(user?.email);
+    // console.log(user?.email);
+
+    const handleDelete = _id => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    fetch(`http://localhost:5000/delete/${_id}`, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount > 0) {
+
+                                Swal.fire({
+                                    title: "Deleted!",
+                                    text: "Your item has been deleted.",
+                                    icon: "success"
+                                });
+
+                                const remaining = items.filter(i => i._id !== _id);
+                                setItems(remaining)
+                                // console.log('delete');
+                                // setSort(remaining)
+                            }
+                        })
+                }
+            })
+
+    }
+
+
 
     return (
         <div className="overflow-x-auto">
@@ -61,10 +92,10 @@ const MyPost = () => {
                                 </div>
                             </td>
                             <td className="font-semibold">
-                                {p.title.slice(0,100)}
+                                {p.title.slice(0, 100)}
                                 <br />
                             </td>
-                          
+
                             <td className="font-semibold">{p.category
                             }</td>
 
@@ -80,7 +111,7 @@ const MyPost = () => {
                                     </span>
                                 </Link>
 
-                                <button onClick={() => (p._id)}
+                                <button onClick={() => handleDelete(p._id)}
                                     className="group relative inline-block text-sm font-medium text-white focus:outline-none focus:ring"
                                     href="#"
                                 >

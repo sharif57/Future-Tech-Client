@@ -20,6 +20,7 @@ import AllPostData from './components/AllPostData';
 import PostDetails from './components/PostDetails';
 import Dashboard from './Dashboard/Dashboard';
 import Profile from './Dashboard/Profile';
+import MyPost from './Dashboard/MyPost';
 
 const router = createBrowserRouter([
   {
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
       {
         path: 'blogPostForm',
         element: <BlogPostForm></BlogPostForm>
+      },
+      {
+        path:'myPost',
+        element:<MyPost></MyPost>
       }
     ]
   }

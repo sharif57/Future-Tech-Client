@@ -24,6 +24,7 @@ import MyPost from './Dashboard/MyPost';
 import PostResource from './Dashboard/PostResource';
 import Resources from './components/Resources';
 import BookMark from './Dashboard/BookMark';
+import BookMarkDetails from './components/BookMarkDetails';
 
 const router = createBrowserRouter([
   {
@@ -105,6 +106,11 @@ const router = createBrowserRouter([
       {
         path:'bookMark',
         element:<BookMark></BookMark>
+      },
+      {
+        path: 'bookMarkDetails/:id',
+        element: <BookMarkDetails></BookMarkDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/bookMarks/${params.id}`)
       },
       // admin related
       {

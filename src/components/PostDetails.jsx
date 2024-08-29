@@ -17,7 +17,7 @@ const PostDetails = () => {
             <div className="p-12 flex gap-[200px]">
                 <div className="w-2/3">
                     <h1 className="text-2xl text-white font-semibold mb-3">Introduction</h1>
-                    <p>{items.title}.</p>
+                    <p>{items.title}</p>
 
                     <h1 className="text-2xl font-semibold text-white mb-3 mt-14">{items.category}</h1>
                     <p className="mt-3 ">{items.description}</p>

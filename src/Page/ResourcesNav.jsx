@@ -33,7 +33,7 @@ const ResourcesNav = () => {
 
             <div className="flex items-center justify-center gap-12 pt-14 pb-14">
                 <div className="w-2/5 space-y-5">
-                    <img src="/public/Group (2).png" alt="" />
+                    <img src="/Group (2).png" alt="" />
                     <h1 className="text-4xl font-semibold text-white">Quantum Computing Whitepaper</h1>
                     <p>Provides technical specifications and requirements for implementing quantum computing systems.</p>
                   
@@ -68,7 +68,7 @@ const ResourcesNav = () => {
             </div>
             <div className="flex items-center justify-center gap-12 pt-14 pb-14">
                 <div className="w-2/5 space-y-5">
-                    <img src="/public/Group 236.png" alt="" />
+                    <img src="/Group 236.png" alt="" />
                     <h1 className="text-4xl font-semibold text-white">Space Exploration Whitepaper</h1>
                     <p>An in-depth whitepaper covering the latest advancements in space exploration, including Mars missions and asteroid mining.</p>
                   

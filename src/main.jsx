@@ -21,6 +21,9 @@ import PostDetails from './components/PostDetails';
 import Dashboard from './Dashboard/Dashboard';
 import Profile from './Dashboard/Profile';
 import MyPost from './Dashboard/MyPost';
+import PostResource from './Dashboard/PostResource';
+import Resources from './components/Resources';
+import BookMark from './Dashboard/BookMark';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +46,11 @@ const router = createBrowserRouter([
         path: '/resNav',
         element: <ResourcesNav></ResourcesNav>
       },
+       {
+        path:'resourcesData',
+        element:<Resources></Resources>,
+        loader: ()=> fetch('http://localhost:5000/resource')
+       },
       {
         path: '/login',
         element: <Login></Login>
@@ -81,6 +89,7 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard></Dashboard>,
     children: [
+      // user related
       {
         path: 'profile',
         element: <Profile></Profile>
@@ -92,6 +101,15 @@ const router = createBrowserRouter([
       {
         path:'myPost',
         element:<MyPost></MyPost>
+      },
+      {
+        path:'bookMark',
+        element:<BookMark></BookMark>
+      },
+      // admin related
+      {
+        path:'postResource',
+        element:<PostResource></PostResource>
       }
     ]
   }

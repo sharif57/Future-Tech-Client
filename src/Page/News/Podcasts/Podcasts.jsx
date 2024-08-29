@@ -17,10 +17,9 @@ const Podcasts = () => {
 
             <div className="flex items-center justify-center gap-12 pt-14 pb-14">
                 <div className="w-2/5 space-y-5">
-                    <img src="/public/Icon (5).png" alt="" />
+                    <img src="/Icon (5).png" alt="" />
                     <div className="flex items-center justify-between mt-4">
                         <h1 className="text-4xl font-semibold text-white">AI Revolution</h1>
-                        <img src="/public/Sub Container (1).png" alt="" />
                     </div>
 
                     <div className="flex justify-between items-center bg-[#191919] p-6 rounded-lg">
@@ -62,10 +61,10 @@ const Podcasts = () => {
 
             <div className="flex items-center justify-center gap-12 pt-10 pb-10">
                 <div className="w-2/5 space-y-5">
-                    <img src="/public/Icon (5).png" alt="" />
+                    <img src="/Icon (5).png" alt="" />
                     <div className="flex items-center justify-between mt-4">
                         <h1 className="text-4xl font-semibold text-white">AI Conversations</h1>
-                        <img src="/public/Sub Container (1).png" alt="" />
+                        {/* <img src=" alt="" /> */}
                     </div>
 
                     <div className="flex justify-between items-center bg-[#191919] p-6 rounded-lg">

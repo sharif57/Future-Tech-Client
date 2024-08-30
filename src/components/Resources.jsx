@@ -77,23 +77,20 @@ const Resources = () => {
                     </div>
                 </div>
             </div>
-
-
-
-            <div className="flex  justify-between  items-center gap-10 pt-16 pb-16">
-                <div className="w-1/3 space-y-6">
+            <div className="lg:flex  justify-between  items-center gap-10 lg:pt-16 pb-16 p-4">
+                <div className="lg:w-1/3 space-y-6">
                     <img src="https://i.ibb.co/XXJDP1s/Group-234.png" alt="" />
                     <h1 className="text-5xl font-semibold text-white">Whitepapers</h1>
-                    <p>Dive into comprehensive reports and analyses with our collection of whitepapers. </p>
+                    <p>Dive into comprehensive reports and analyses with our collection of whitepapers.</p>
                     <div>
-                        <button className="btn btn-outline flex gap-2 w-full">Download Whitepapers Now <FaArrowRight className="size-7 text-yellow-500" />
+                        <button className="btn btn-outline flex gap-2 w-full">Download Ebooks Now <FaArrowRight className="size-7 text-yellow-500" />
                         </button>
                     </div>
                     <div>
                         <div className="bg-[#191919] flex justify-around p-5 rounded-lg">
                             <div>
                                 <h1>Downloaded By</h1>
-                                <p className="text-white font-semibold text-2xl">10k + users</p>
+                                <p className="text-white font-semibold lg:text-2xl">10k + users</p>
                             </div>
                             <div>
                                 <img src="https://i.ibb.co/1ZDmpTS/Container-2.png" alt="" />
@@ -102,27 +99,27 @@ const Resources = () => {
                     </div>
                 </div>
                 <div className="">
-                    <div className="flex justify-between gap-5 mb-8">
-                        <h1 className="text-2xl font-semibold text-white w-1/5">Topics Coverage</h1>
-                        <p>Whitepapers cover quantum computing (20%), AI ethics (15%), space mining prospects (20%), AI in healthcare (15%), and renewable energy strategies (30%).</p>
+                    <div className="lg:flex justify-between gap-5 mb-8">
+                        <h1 className="text-2xl font-semibold text-white lg:w-1/5 ">Topics Coverage</h1>
+                        <p className="lg:mt-0 mt-2">Whitepapers cover quantum computing (20%), AI ethics (15%), space mining prospects (20%), AI in healthcare (15%), and renewable energy strategies (30%).</p>
                     </div>
-                    <video src="/video-3.mp4" controls autoPlay autoFocus className="w-full h-96 object-cover rounded-lg">
+                    {/* <img src="https://i.ibb.co/DkbYqMT/Image.png" alt="" /> */}
+                    <video src="/video-3.mp4" controls autoPlay autoFocus className="w-full lg:h-96 h-48 object-cover rounded-lg">
                         Your browser does not support the video tag.
                     </video>
 
-
-                    <div className="flex justify-between items-center mt-8 ">
-                        <div className="bg-[#191919]  px-6 rounded-lg py-2 w-1/4">
-                            <h1>Total Whitepapers</h1>
-                            <p className="text-xl font-semibold text-white">Over 50 whitepapers</p>
+                    <div className="lg:flex justify-between items-center mt-8 ">
+                        <div className="bg-[#191919]  px-6 rounded-lg py-2 lg:w-1/4">
+                            <h1>Total Ebooks</h1>
+                            <p className="text-xl font-semibold text-white">Over 100 ebooks</p>
                         </div>
 
-                        <div className="bg-[#191919] px-6 rounded-lg py-2 w-1/2">
+                        <div className="bg-[#191919] px-6 rounded-lg py-2 lg:w-1/2">
 
                             <div className="flex  justify-between items-center ">
                                 <div>
                                     <p>Download Formats</p>
-                                    <h1 className="text-xl font-semibold text-white mt-3">PDF format for access.</h1>
+                                    <h1 className="lg:text-xl font-semibold text-white mt-3">PDF format for access.</h1>
                                 </div>
                                 <div>
                                     <button className="btn btn-outline flex gap-2">Preview<FaEye className="size-7 text-yellow-500" />
@@ -136,13 +133,17 @@ const Resources = () => {
                         <div className="flex  justify-between items-center ">
                             <div>
                                 <p>Average Author Expertise</p>
-                                <h1 className="text-xl font-semibold text-white mt-3">An intermediate stage, level, or position is one that occurs between two other stages, levels, or positions.</h1>
+                                <h1 className="lg:text-xl font-semibold text-white mt-3">An intermediate stage, level, or position is one that occurs between two other stages, levels, or positions.</h1>
                             </div>
 
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
+          
         </div>
 
     </div>;

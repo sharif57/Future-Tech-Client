@@ -1,4 +1,5 @@
 import { FaArrowTrendUp } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
     return <div className=" container mx-auto p-2">
@@ -32,7 +33,7 @@ const Banner = () => {
                     <img src="https://i.ibb.co/1ZDmpTS/Container-2.png" alt="" />
                     <h1 className="text-3xl font-semibold text-white">Explore 1000+ resources</h1>
                     <p>Over 1,000 articles on emerging tech trends and breakthroughs.</p>
-                    <button className="btn btn-outline">Explore Resources <FaArrowTrendUp className="size-6 text-yellow-300" />                    </button>
+                    <Link to={'/resNav'} className="btn btn-outline">Explore Resources <FaArrowTrendUp className="size-6 text-yellow-300" />                    </Link>
                 </div>
             </div>
         </div>

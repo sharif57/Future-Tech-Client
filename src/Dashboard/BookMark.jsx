@@ -52,44 +52,59 @@ const BookMark = () => {
     };
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-            {bookMarks.map((bookMark) => (
-                <div key={bookMark._id}>
-                    <div className="bg-gray-800 p-6 rounded-lg h-[550px] shadow-lg transform hover:scale-105 transition-transform duration-300 mx-auto">
-                        <img
-                            className="w-full h-48 rounded-lg object-cover mb-4"
-                            src={bookMark.photo}
-                            alt={bookMark.title}
-                        />
-                        <h2 className="text-xl font-semibold text-white mb-2">{bookMark.title.slice(0, 97)}...</h2>
-                        <p className="text-gray-400 mb-4">
-                            {bookMark.description.slice(0, 100)}...
-                        </p>
-                        <div className="flex justify-between items-center">
-                            <span className="text-gray-500 text-sm">
-                                {new Date(bookMark.currentTime).toLocaleDateString("en-US", {
-                                    year: "numeric",
-                                    month: "long",
-                                    day: "numeric",
-                                })}
-                            </span>
-                            <Link
-                                to={`/dashboard/bookMarkDetails/${bookMark._id}`}
-                                className="text-yellow-400 hover:underline"
-                            >
-                                Read More
-                            </Link>
-                        </div>
-                        <div className="mt-4 flex justify-end">
-                            <button onClick={() => handleDelete(bookMark._id)}
-                                className="text-white px-3 py-1 rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
-                            >
-                                <RiDeleteBin6Line className="size-8" />
+        <div>
+            <div className="bg-[#191919] py-16 px-16">
+                <div className="container mx-auto">
+                    <div className="flex justify-between items-center">
+                        <div className="w-2/3">
+                            <button className="bg-[#333333] p-2 rounded-md text-white font-medium">
+                                View Your Favorites Blogs!
                             </button>
+                            <h1 className="text-5xl font-semibold text-white mt-3">
+                            Explore FutureTech's In-Depth Blog Posts and Save Your Favorites                            </h1>
                         </div>
                     </div>
                 </div>
-            ))}
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+                {bookMarks.map((bookMark) => (
+                    <div key={bookMark._id}>
+                        <div className="bg-gray-800 p-6 rounded-lg h-[550px] shadow-lg transform hover:scale-105 transition-transform duration-300 mx-auto">
+                            <img
+                                className="w-full h-48 rounded-lg object-cover mb-4"
+                                src={bookMark.photo}
+                                alt={bookMark.title}
+                            />
+                            <h2 className="text-xl font-semibold text-white mb-2">{bookMark.title.slice(0, 97)}...</h2>
+                            <p className="text-gray-400 mb-4">
+                                {bookMark.description.slice(0, 100)}...
+                            </p>
+                            <div className="flex justify-between items-center">
+                                <span className="text-gray-500 text-sm">
+                                    {new Date(bookMark.currentTime).toLocaleDateString("en-US", {
+                                        year: "numeric",
+                                        month: "long",
+                                        day: "numeric",
+                                    })}
+                                </span>
+                                <Link
+                                    to={`/dashboard/bookMarkDetails/${bookMark._id}`}
+                                    className="text-yellow-400 hover:underline"
+                                >
+                                    Read More
+                                </Link>
+                            </div>
+                            <div className="mt-4 flex justify-end">
+                                <button onClick={() => handleDelete(bookMark._id)}
+                                    className="text-white px-3 py-1 rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+                                >
+                                    <RiDeleteBin6Line className="size-8" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

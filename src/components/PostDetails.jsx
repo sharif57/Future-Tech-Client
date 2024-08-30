@@ -11,7 +11,7 @@ const PostDetails = () => {
     return <div>
         <div className="container mx-auto p-2">
             <div>
-                <img className="w-full h-[500px] bg-cover  lg:relative" src={items.photo} alt="" />
+                <img className="w-full h-[500px] bg-cover  lg:relative rounded-t-badge" src={items.photo} alt="" />
             </div>
             <h1 className=" lg:absolute lg:text-5xl text-2xl lg:ml-[230px] font-semibold lg:-mt-20 text-center text-black bg-opacity-70 rounded-lg bg-slate-300 lg:p-8">{items.title.slice(0,50)}...</h1>
             <div className="lg:p-12 lg:flex gap-[200px]">

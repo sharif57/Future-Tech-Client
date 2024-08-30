@@ -15,7 +15,7 @@ const Navbar = () => {
     }
 
     return <div className="bg-[#191919]">
-        <div className="navbar  container mx-auto fixed ">
+        <div className="navbar  container mx-auto  ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,21 +35,124 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><a>Home</a></li>
-                        <li><a><Link to={'/news'}>News</Link></a></li>
-                        <li><a>Podcasts</a></li>
-                        <li><a>Resources</a></li>
+                        <ul className="menu menu-horizontal px-1">
+                            <li>
+                                <a>
+                                    <NavLink
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? 'font-semibold border-b-2  border-spacing-5 transition-all duration-1000 border-yellow-400'
+                                                : 'font-normal transition-all '
+                                        }
+                                        to={'/'}
+                                    >
+                                        Home
+                                    </NavLink>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <NavLink
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? 'font-semibold border-b-2  border-spacing-5 transition-all duration-1000 border-yellow-400'
+                                                : 'font-normal transition-all '
+                                        }
+                                        to={'/news'}                            >
+                                        News
+                                    </NavLink>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <NavLink
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? 'font-semibold border-b-2  border-spacing-5 transition-all duration-1000 border-yellow-400'
+                                                : 'font-normal transition-all '
+                                        }
+                                        to={'/podcasts'}                            >
+                                        Podcasts
+                                    </NavLink>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <NavLink
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? 'font-semibold border-b-2  border-spacing-5 transition-all duration-1000 border-yellow-400'
+                                                : 'font-normal transition-all '
+                                        }
+                                        to={'/resNav'}                            >
+                                        Resources
+                                    </NavLink>
+                                </a>
+                            </li>
+
+
+                        </ul>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl"><img src="https://i.ibb.co/vYxPFsF/Logo.png" alt="" /></a>
+                <Link to={'/'} className="btn btn-ghost text-xl"><img src="https://i.ibb.co/vYxPFsF/Logo.png" alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a><Link to={'/'}>Home</Link></a></li>
-                    <li><a><Link to={'/news'}>News</Link></a></li>
-                    <li><a><Link to={'/podcasts'}>Podcasts</Link></a></li>
-                    <li><a> <Link to={'/resNav'}>Resources</Link></a></li>
-                    
+                    <li>
+                        <a>
+                            <NavLink
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? 'font-semibold border-b-2  border-spacing-5 transition-all duration-1000 border-yellow-400'
+                                        : 'font-normal transition-all '
+                                }
+                                to={'/'}
+                            >
+                                Home
+                            </NavLink>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <NavLink
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? 'font-semibold border-b-2  border-spacing-5 transition-all duration-1000 border-yellow-400'
+                                        : 'font-normal transition-all '
+                                }
+                                to={'/news'}                            >
+                                News
+                            </NavLink>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <NavLink
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? 'font-semibold border-b-2  border-spacing-5 transition-all duration-1000 border-yellow-400'
+                                        : 'font-normal transition-all '
+                                }
+                                to={'/podcasts'}                            >
+                                Podcasts
+                            </NavLink>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <NavLink
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? 'font-semibold border-b-2  border-spacing-5 transition-all duration-1000 border-yellow-400'
+                                        : 'font-normal transition-all '
+                                }
+                                to={'/resNav'}                            >
+                                Resources
+                            </NavLink>
+                        </a>
+                    </li>
+
+
                 </ul>
             </div>
             <div className="navbar-end">
@@ -57,7 +160,7 @@ const Navbar = () => {
                     {
                         !user && (
                             <li>
-                                <NavLink to={'/login'} className={({ isActive }) => isActive ? 'text-primary font-bold ' : 'font-bold'}>LogIn</NavLink>
+                                <NavLink to={'/login'} className={'btn btn-warning '}>LogIn</NavLink>
                             </li>
                         )
                     }

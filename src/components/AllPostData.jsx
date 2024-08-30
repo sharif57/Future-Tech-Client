@@ -55,15 +55,15 @@ const AllPostData = () => {
 
 
     return (
-        <div className="container mx-auto">
-            <div className="bg-[#191919] py-16 px-16">
+        <div className="container mx-auto p-2">
+            <div className="bg-[#191919] lg:py-16 py-9 lg:px-16">
                 <div className="container mx-auto">
                     <div className="flex justify-between items-center">
-                        <div className="w-2/3">
+                        <div className="lg:w-2/3">
                             <button className="bg-[#333333] p-2 rounded-md text-white font-medium">
                                 View All more Blogs!
                             </button>
-                            <h1 className="text-5xl font-semibold text-white mt-3">
+                            <h1 className="lg:text-5xl text-2xl font-semibold text-white mt-3">
                                 Explore FutureTech's In-Depth Blog Posts
                             </h1>
                         </div>

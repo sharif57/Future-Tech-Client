@@ -1,44 +1,44 @@
 /* eslint-disable react/no-unescaped-entities */
 const ResourcesNav = () => {
     return <div className="bg-[#141414]">
-        <div className="container mx-auto ">
-            <div className="py-32">
-                <div className="flex  justify-between items-center gap-8  ">
+        <div className="container mx-auto p-2">
+            <div className="lg:py-12 py-8">
+                <div className="lg:flex  justify-between items-center gap-8  ">
                     <div className="">
-                        <h1 className="text-5xl font-semibold text-white mt-3">Unlock a World of Knowledge.</h1>
+                        <h1 className="lg:text-3xl text-xl font-semibold text-white lg:mt-3 mb-6 ">Unlock a World of Knowledge.</h1>
                     </div>
                     <div>
                         <p>Dive deep into the AI universe with our collection of insightful podcasts. Explore the latest trends, breakthroughs, and discussions on artificial intelligence. Whether you're an enthusiast or a professional, our AI podcasts offer a gateway to knowledge and innovation.</p>
                     </div>
                 </div>
-                <div className="grid grid-cols-2 lg:grid-cols-4 pt-28">
+                <div className="grid grid-cols-2 lg:grid-cols-4 lg:pt-16 pt-12">
                     <div>
-                        <h1 className="text-5xl text-white font-semibold">300<span className="text-yellow-400">+</span></h1>
+                        <h1 className="lg:text-5xl text-2xl text-white font-semibold">300<span className="text-yellow-400">+</span></h1>
                         <p className="mt-2">Resources available</p>
                     </div>
                     <div>
-                        <h1 className="text-5xl text-white font-semibold">12k<span className="text-yellow-400">+</span></h1>
+                        <h1 className="lg:text-5xl text-2xl text-white font-semibold">12k<span className="text-yellow-400">+</span></h1>
                         <p className="mt-2">Total Downloads</p>
                     </div>
                     <div>
-                        <h1 className="text-5xl text-white font-semibold">10k<span className="text-yellow-400">+</span></h1>
+                        <h1 className="lg:text-5xl text-2xl text-white font-semibold">10k<span className="text-yellow-400">+</span></h1>
                         <p className="mt-2">Active Users</p>
                     </div>
                     <div>
-                        <h1 className="text-5xl text-white font-semibold">100<span className="text-yellow-400">+</span></h1>
+                        <h1 className="lg:text-5xl text-2xl text-white font-semibold">100<span className="text-yellow-400">+</span></h1>
                         <p className="mt-2">Countries Accesses Our Content </p>
                     </div>
                 </div>
             </div>
 
-            <div className="flex items-center justify-center gap-12 pt-14 pb-14">
-                <div className="w-2/5 space-y-5">
+            <div className="lg:flex  items-center justify-center gap-12 pt-14 pb-14">
+                <div className="lg:w-2/5 space-y-5">
                     <img src="/Group (2).png" alt="" />
-                    <h1 className="text-4xl font-semibold text-white">Quantum Computing Whitepaper</h1>
+                    <h1 className="lg:text-4xl text-2xl  font-semibold text-white">Quantum Computing Whitepaper</h1>
                     <p>Provides technical specifications and requirements for implementing quantum computing systems.</p>
                   
                 </div>
-                <div className="w-3/5">
+                <div className="lg:w-3/5 mt-4 lg:mt-0">
                     <video
                         src="https://videos.pexels.com/video-files/6964235/6964235-sd_640_360_25fps.mp4"
                         controls autoPlay autoFocus
@@ -66,14 +66,14 @@ const ResourcesNav = () => {
 
                 </div>
             </div>
-            <div className="flex items-center justify-center gap-12 pt-14 pb-14">
-                <div className="w-2/5 space-y-5">
+            <div className="lg:flex items-center justify-center gap-12 pt-14 pb-14">
+                <div className="lg:w-2/5 space-y-5">
                     <img src="/Group 236.png" alt="" />
-                    <h1 className="text-4xl font-semibold text-white">Space Exploration Whitepaper</h1>
+                    <h1 className="lg:text-4xl text-2xl font-semibold text-white">Space Exploration Whitepaper</h1>
                     <p>An in-depth whitepaper covering the latest advancements in space exploration, including Mars missions and asteroid mining.</p>
                   
                 </div>
-                <div className="w-3/5">
+                <div className="lg:w-3/5 mt-4 lg:mt-0">
                     <video
                         src="https://videos.pexels.com/video-files/7169896/7169896-sd_960_506_25fps.mp4"
                         controls autoPlay autoFocus

@@ -6,25 +6,25 @@ import Visual from "./Visual";
 
 const News = () => {
     return <div className="bg-[#141414]">
-        <div className="container mx-auto">
+        <div className="container mx-auto lg:p-2 p-2">
             <div className=" pb-10">
-                <div className="flex  justify-between items-center py-16 ">
+                <div className="lg:flex  justify-between items-center lg:py-16 py-5 ">
                     <div className="">
-                        <h1 className="text-5xl font-semibold text-white mt-3">Today's Headlines: Stay Informed</h1>
+                        <h1 className="lg:text-5xl text-2xl font-semibold text-white mt-3">Today's Headlines: Stay Informed</h1>
                     </div>
                     <div>
                         <p>Explore the latest news from around the world. We bring you up-to-the-minute updates on the most significant events, trends, and stories. Discover the world through our news coverage.</p>
                     </div>
                 </div>
 
-                <div className="flex justify-center items-center gap-8">
+                <div className="lg:flex justify-center items-center gap-8">
                     <div>
                         <img src="https://i.ibb.co/yFmW3Cz/Image-2.png" alt="" />
                     </div>
-                    <div className="p-6">
+                    <div className="lg:p-6">
                         <h1 className="text-xl font-semibold text-white mb-4">Global Climate Summit Addresses Urgent Climate Action</h1>
                         <p className="mt-2">World leaders gathered at the Global Climate Summit to discuss urgent climate action, emissions reductions, and renewable energy targets.</p>
-                        <div className="flex gap-8 mt-6 mb-">
+                        <div className="lg:flex gap-8 mt-6 ">
                             <div>
                                 <h3>Category</h3>
                                 <p className="text-white font-bold">Environment</p>
@@ -53,7 +53,7 @@ const News = () => {
                                     <p>20</p>
                                 </button>
                             </div>
-                            <button className="btn btn-outline text-white">Read more</button>
+                            <button className="hidden sm:block btn btn-outline text-white">Read more</button>
                         </div>
                     </div>
                 </div>
@@ -123,13 +123,13 @@ const News = () => {
                 </div>
             </div>
             <div>
-                <div className="flex  justify-between items-center py-16 bg-[#191919]">
+                <div className="lg:flex  justify-between items-center py-16 bg-[#191919]">
                     <div className="">
                         <p>Welcome to Our News Hub</p>
-                        <h1 className="text-5xl font-semibold text-white mt-3">Discover the World of Headlines</h1>
+                        <h1 className="lg:text-5xl text-2xl font-semibold text-white mt-3">Discover the World of Headlines</h1>
                     </div>
                     <div>
-                        <button className="btn btn-outline flex gap-2">View All Blogs <FaArrowRight className="size-7 text-yellow-500" />
+                        <button className="btn btn-outline flex gap-2 lg:mt-0 mt-3">View All Blogs <FaArrowRight className="size-7 text-yellow-500" />
                         </button>
                     </div>
                 </div>

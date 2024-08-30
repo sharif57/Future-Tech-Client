@@ -5,33 +5,33 @@ const Visual = () => {
     return <div>
         <div className="bg-[#191919] py-16 ">
             <div className="container mx-auto">
-                <div className="flex  justify-between items-center">
+                <div className="lg:flex  justify-between items-center">
                     <div>
                         <button className="bg-[#333333] p-2 rounded-md text-white font-medium">Featured Videos</button>
-                        <h1 className="text-5xl font-bold text-white mt-3">Visual Insights for the Modern Viewer</h1>
+                        <h1 className="lg:text-5xl text-2xl font-bold text-white mt-3">Visual Insights for the Modern Viewer</h1>
                     </div>
                     <div>
-                        <button className="btn btn-outline flex gap-2">View All Blogs <FaArrowRight className="size-7 text-yellow-500" />
+                        <button className="btn btn-outline flex gap-2 lg:mt-0 mt-3">View All Blogs <FaArrowRight className="size-7 text-yellow-500" />
                         </button>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-14">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:mt-14 mt-8">
                     <div>
                         <video
                             src="https://videos.pexels.com/video-files/7579953/7579953-sd_960_506_25fps.mp4"
                             controls autoPlay autoFocus
-                            className="w-full h-[400px] rounded-lg"
+                            className="w-full lg:h-[400px] rounded-lg"
                         >
                             Your browser does not support the video tag.
                         </video>
                         <h1 className="text-xl text-white font-semibold mb-2">Mars Exploration: Unveiling Alien Landscapes</h1>
                         Embark on a journey through the Red Planet's breathtaking landscapes and uncover the mysteries of Mars.
                     </div>
-                    <div className="mb-8">
+                    <div className="lg:mb-8">
                         <video
                             src="https://videos.pexels.com/video-files/5993319/5993319-sd_640_360_30fps.mp4"
                             controls autoPlay autoFocus
-                            className="w-full h-[400px] rounded-lg"
+                            className="w-full lg:h-[400px] rounded-lg"
                         >
                             Your browser does not support the video tag.
                         </video>
@@ -42,7 +42,7 @@ const Visual = () => {
                         <video
                             src="https://videos.pexels.com/video-files/7579945/7579945-sd_960_506_25fps.mp4"
                             controls autoPlay autoFocus
-                            className="w-full h-[400px] rounded-lg"
+                            className="w-full lg:h-[400px] rounded-lg"
                         >
                             Your browser does not support the video tag.
                         </video>
@@ -53,7 +53,7 @@ const Visual = () => {
                         <video
                             src="https://videos.pexels.com/video-files/8327799/8327799-sd_640_360_25fps.mp4"
                             controls autoPlay autoFocus
-                            className="w-full h-[400px] rounded-lg"
+                            className="w-full lg:h-[400px] rounded-lg"
                         >
                             Your browser does not support the video tag.
                         </video>

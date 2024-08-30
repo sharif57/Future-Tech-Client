@@ -4,12 +4,12 @@ const Part = () => {
         <div className="container mx-auto">
             <div className="flex lg:flex-row-reverse justify-between items-center gap-10 ">
                 <div>
-                    <button className="bg-[#333333] p-2 rounded-md text-white font-medium">Learn, Connect, and Innovate</button>
-                    <h1 className="lg:text-5xl text-2xl font-semibold text-white mt-3">Be Part of the Future Tech Revolution</h1>
+                    <button className="bg-[#333333] p-2 rounded-md text-white lg:font-medium">Learn, Connect, and Innovate</button>
+                    <h1 className="lg:text-5xl text-xl font-semibold text-white mt-3">Be Part of the Future Tech Revolution</h1>
                     <p className="mt-3 ">Immerse yourself in the world of future technology. Explore our comprehensive resources, connect with fellow tech enthusiasts, and drive innovation in the industry. Join a dynamic community of forward-thinkers.</p>
                 </div>
                 <div>
-                    <img src="https://i.ibb.co/1TnY0p7/Logo-2.png" alt="" />
+                    <img className="hidden sm:block" src="https://i.ibb.co/1TnY0p7/Logo-2.png" alt="" />
                 </div>
             </div>
 

@@ -4,33 +4,33 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Podcasts = () => {
     return <div className="bg-[#141414]">
-        <div className="container mx-auto">
+        <div className="container mx-auto p-2">
 
-            <div className="flex  justify-between items-center py-16">
+            <div className="lg:flex  justify-between items-center lg:py-16 py-6">
                 <div>
-                    <h1 className="text-4xl font-semibold text-white mt-3">Unlock the World of Artificial Intelligence through Podcasts.</h1>
+                    <h1 className="lg:text-3xl text-xl font-semibold text-white mt-3 lg:mb-0 mb-4">Unlock the World of Artificial Intelligence through Podcasts.</h1>
                 </div>
                 <div>
                     <p>Dive deep into the AI universe with our collection of insightful podcasts. Explore the latest trends, breakthroughs, and discussions on artificial intelligence. Whether you're an enthusiast or a professional, our AI podcasts offer a gateway to knowledge and innovation.</p>
                 </div>
             </div>
 
-            <div className="flex items-center justify-center gap-12 pt-14 pb-14">
-                <div className="w-2/5 space-y-5">
+            <div className="lg:flex items-center justify-center gap-12 pt-14 pb-14">
+                <div className="lg:w-2/5 space-y-5">
                     <img src="/Icon (5).png" alt="" />
                     <div className="flex items-center justify-between mt-4">
                         <h1 className="text-4xl font-semibold text-white">AI Revolution</h1>
                     </div>
 
-                    <div className="flex justify-between items-center bg-[#191919] p-6 rounded-lg">
+                    <div className="flex justify-between items-center bg-[#191919] lg:p-6 p-2 rounded-lg">
                         <div>
                             <p>Host</p>
-                            <h1 className="text-xl text-white font-semibold">Dr. Sarah Mitchell</h1>
+                            <h1 className="lg:text-xl text-white font-semibold">Dr. Sarah Mitchell</h1>
                         </div>
                         <button className="btn btn-outline text-white">Listen Podcast</button>
                     </div>
                 </div>
-                <div className="w-3/5">
+                <div className="lg:w-3/5 lg:mt-0 mt-8">
                     <video
                         src="https://videos.pexels.com/video-files/7579953/7579953-sd_960_506_25fps.mp4"
                         controls autoPlay autoFocus
@@ -59,8 +59,8 @@ const Podcasts = () => {
                 </div>
             </div>
 
-            <div className="flex items-center justify-center gap-12 pt-10 pb-10">
-                <div className="w-2/5 space-y-5">
+            <div className="lg:flex items-center justify-center gap-12 lg:pt-10 pb-10">
+                <div className="lg:w-2/5 lg:space-y-5">
                     <img src="/Icon (5).png" alt="" />
                     <div className="flex items-center justify-between mt-4">
                         <h1 className="text-4xl font-semibold text-white">AI Conversations</h1>
@@ -70,12 +70,12 @@ const Podcasts = () => {
                     <div className="flex justify-between items-center bg-[#191919] p-6 rounded-lg">
                         <div>
                             <p>Host</p>
-                            <h1 className="text-xl text-white font-semibold">Mark Anderson</h1>
+                            <h1 className="lg:text-xl text-white font-semibold">Mark Anderson</h1>
                         </div>
                         <button className="btn btn-outline text-white">Listen Podcast</button>
                     </div>
                 </div>
-                <div className="w-3/5">
+                <div className="lg:w-3/5">
                     <video
                         src="https://videos.pexels.com/video-files/3129957/3129957-sd_640_360_25fps.mp4"
                         controls autoPlay autoFocus
@@ -105,22 +105,22 @@ const Podcasts = () => {
             </div>
 
             <div className=" ">
-                <div className="flex  justify-between items-center py-16">
+                <div className="flex  justify-between items-center lg:py-16">
                     <div>
                         <button className="bg-[#333333] p-2 rounded-md text-white font-medium">Featured Videos</button>
-                        <h1 className="text-5xl font-semibold text-white mt-3">Latest Podcast Episodes</h1>
+                        <h1 className="lg:text-5xl text-2xl font-semibold text-white mt-3">Latest Podcast Episodes</h1>
                     </div>
                     <div>
-                        <button className="btn btn-outline flex gap-2">View All Blogs <FaArrowRight className="size-7 text-yellow-500" />
+                        <button className="hidden sm:block btn btn-outline flex lg:gap-2">View All Blogs <FaArrowRight className="lg:size-7 text-yellow-500" />
                         </button>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-14">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:mt-14">
                     <div>
                         <video
                             src="https://videos.pexels.com/video-files/7579953/7579953-sd_960_506_25fps.mp4"
                             controls autoPlay autoFocus
-                            className="w-full h-[400px] rounded-lg"
+                            className="w-full lg:h-[400px] h-[200px] rounded-lg"
                         >
                             Your browser does not support the video tag.
                         </video>
@@ -131,7 +131,7 @@ const Podcasts = () => {
                         <video
                             src="https://videos.pexels.com/video-files/5993319/5993319-sd_640_360_30fps.mp4"
                             controls autoPlay autoFocus
-                            className="w-full h-[400px] rounded-lg"
+                            className="w-full lg:h-[400px] h-[200px] rounded-lg"
                         >
                             Your browser does not support the video tag.
                         </video>
@@ -142,7 +142,7 @@ const Podcasts = () => {
                         <video
                             src="https://videos.pexels.com/video-files/7579945/7579945-sd_960_506_25fps.mp4"
                             controls autoPlay autoFocus
-                            className="w-full h-[400px] rounded-lg"
+                            className="w-full lg:h-[400px] h-[200px] rounded-lg"
                         >
                             Your browser does not support the video tag.
                         </video>
@@ -153,7 +153,7 @@ const Podcasts = () => {
                         <video
                             src="https://videos.pexels.com/video-files/8327799/8327799-sd_640_360_25fps.mp4"
                             controls autoPlay autoFocus
-                            className="w-full h-[400px] rounded-lg"
+                            className="w-full lg:h-[400px] h-[200px] rounded-lg"
                         >
                             Your browser does not support the video tag.
                         </video>

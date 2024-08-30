@@ -9,13 +9,13 @@ const PostDetails = () => {
     // console.log(items);
 
     return <div>
-        <div className="container mx-auto">
+        <div className="container mx-auto p-2">
             <div>
-                <img className="w-full h-[500px] bg-cover  relative" src={items.photo} alt="" />
+                <img className="w-full h-[500px] bg-cover  lg:relative" src={items.photo} alt="" />
             </div>
-            <h1 className=" absolute text-5xl ml-[230px] font-semibold -mt-20 text-center text-black bg-opacity-70 rounded-lg bg-slate-300 p-8">{items.title.slice(0,50)}...</h1>
-            <div className="p-12 flex gap-[200px]">
-                <div className="w-2/3">
+            <h1 className=" lg:absolute lg:text-5xl text-2xl lg:ml-[230px] font-semibold lg:-mt-20 text-center text-black bg-opacity-70 rounded-lg bg-slate-300 lg:p-8">{items.title.slice(0,50)}...</h1>
+            <div className="lg:p-12 lg:flex gap-[200px]">
+                <div className="lg:w-2/3">
                     <h1 className="text-2xl text-white font-semibold mb-3">Introduction</h1>
                     <p>{items.title}</p>
 
@@ -23,7 +23,7 @@ const PostDetails = () => {
                     <p className="mt-3 ">{items.description}</p>
                    
                 </div>
-                <div className="w-1/3">
+                <div className="lg:w-1/3">
                     <div className="flex gap-2 pt-4">
                         <button className="btn space-x-2">
                             <GiLoveHowl className="text-red-500 size-6" />
@@ -42,7 +42,7 @@ const PostDetails = () => {
                         <div>
                             <div>
                                 <h1>Publication Date</h1>
-                                <p className="text-xl font-semibold text-white">
+                                <p className="lg:text-xl font-semibold text-white">
                                     {new Date(items.currentTime).toLocaleDateString('en-US', {
                                         year: 'numeric',
                                         month: 'long',
@@ -52,17 +52,17 @@ const PostDetails = () => {
                             </div>
                             <div className="mt-8">
                                 <h1>Category</h1>
-                                <p className="text-xl font-semibold text-white">{items.category}</p>
+                                <p className="lg:text-xl font-semibold text-white">{items.category}</p>
                             </div>
                         </div>
                         <div>
                             <div>
                                 <h1>Reading Time</h1>
-                                <p className="text-xl font-semibold text-white">10 Min</p>
+                                <p className="lg:text-xl font-semibold text-white">10 Min</p>
                             </div>
                             <div className="mt-8">
                                 <h1>Author Name</h1>
-                                <p className="text-xl font-semibold text-white">{items.name}</p>
+                                <p className="lg:text-xl font-semibold text-white">{items.name}</p>
                             </div>
                         </div>
                     </div>

@@ -69,7 +69,7 @@ const BookMark = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
                 {bookMarks.map((bookMark) => (
                     <div key={bookMark._id}>
-                        <div className="bg-gray-800 p-6 rounded-lg h-[550px] shadow-lg transform hover:scale-105 transition-transform duration-300 mx-auto">
+                        <div className="bg-gray-800 p-6 rounded-lg h-[580px] shadow-lg transform hover:scale-105 transition-transform duration-300 mx-auto">
                             <img
                                 className="w-full h-48 rounded-lg object-cover mb-4"
                                 src={bookMark.photo}

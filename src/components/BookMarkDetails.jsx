@@ -9,9 +9,9 @@ const BookMarkDetails = () => {
         <div>
             <div className="container mx-auto shadow-2xl">
                 <div>
-                    <img className="w-full h-[500px] rounded-t-badge bg-cover  relative" src={items.photo} alt="" />
+                    <img className="w-full h-[500px] rounded-t-badge bg-cover  lg:relative" src={items.photo} alt="" />
                 </div>
-                <h1 className=" absolute text-5xl ml-[230px] font-semibold -mt-20 text-center text-black bg-opacity-70 rounded-lg bg-slate-300 p-8">
+                <h1 className=" lg:absolute text-4xl ml-[130px] font-semibold -mt-20 text-center text-black bg-opacity-70 rounded-lg bg-slate-300 p-4">
                     {items.title.slice(0, 50)}...
                 </h1>
                 <div className="p-12 flex gap-[200px]">
@@ -41,7 +41,7 @@ const BookMarkDetails = () => {
                             <div>
                                 <div>
                                     <h1>Publication Date</h1>
-                                    <p className="text-xl font-semibold text-white">
+                                    <p className="  text-white">
                                         {new Date(items.currentTime).toLocaleDateString('en-US', {
                                             year: 'numeric',
                                             month: 'long',
@@ -51,17 +51,17 @@ const BookMarkDetails = () => {
                                 </div>
                                 <div className="mt-8">
                                     <h1>Category</h1>
-                                    <p className="text-xl font-semibold text-white">{items.category}</p>
+                                    <p className=" text-white">{items.category}</p>
                                 </div>
                             </div>
                             <div>
                                 <div>
                                     <h1>Reading Time</h1>
-                                    <p className="text-xl font-semibold text-white">10 Min</p>
+                                    <p className=" text-white">10 Min</p>
                                 </div>
                                 <div className="mt-8">
                                     <h1>Author Name</h1>
-                                    <p className="text-xl font-semibold text-white">{items.name}</p>
+                                    <p className=" text-white">{items.name}</p>
                                 </div>
                             </div>
                         </div>

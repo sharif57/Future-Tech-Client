@@ -1,12 +1,18 @@
-import { FaArrowRight, FaRegCommentDots } from "react-icons/fa";
-import { GiLoveHowl } from "react-icons/gi";
-import { LuSendHorizonal } from "react-icons/lu";
+import { FaArrowRight } from "react-icons/fa";
+
 import Posts from "../../components/Posts";
 import Visual from "./Visual";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const News = () => {
+
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const toggleReadMore = () => {
+        setIsExpanded(!isExpanded);
+    };
+
 
     const [news, setNews] = useState([])
     useEffect(() => {
@@ -29,110 +35,6 @@ const News = () => {
                 </div>
 
 
-                {/* <div className="lg:flex justify-center items-center gap-8">
-                    <div>
-                        <img src="https://i.ibb.co/yFmW3Cz/Image-2.png" alt="" />
-                    </div>
-                    <div className="lg:p-6">
-                        <h1 className="text-xl font-semibold text-white mb-4">Global Climate Summit Addresses Urgent Climate Action</h1>
-                        <p className="mt-2">World leaders gathered at the Global Climate Summit to discuss urgent climate action, emissions reductions, and renewable energy targets.</p>
-                        <div className="lg:flex gap-8 mt-6 ">
-                            <div>
-                                <h3>Category</h3>
-                                <p className="text-white font-bold">Environment</p>
-                            </div>
-                            <div>
-                                <h3>Publication Date</h3>
-                                <p className="text-white font-bold">October 10, 2023</p>
-                            </div>
-                            <div>
-                                <h3>Author</h3>
-                                <p className="text-white font-bold">Jane Smith</p>
-                            </div>
-                        </div>
-                        <div className="flex justify-between items-center">
-                            <div className="flex gap-2 pt-4">
-                                <button className="btn space-x-2">
-                                    <GiLoveHowl className="text-red-500 size-6"></GiLoveHowl>
-                                    <p>24.5k</p>
-                                </button>
-                                <button className="btn space-x-2">
-                                    <FaRegCommentDots className="size-6" />
-                                    <p>50</p>
-                                </button>
-                                <button className="btn space-x-2">
-                                    <LuSendHorizonal className="size-6" />
-                                    <p>20</p>
-                                </button>
-                            </div>
-                            <button className="hidden sm:block btn btn-outline text-white">Read more</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-                    <div>
-                        <img className="h-[200px] w-full bg-cover object-fill rounded-lg" src="https://i.ibb.co/5jyD2yC/boy-girl-fight-racism-quote-cardboard-23-2148576151.jpg" alt="" />
-                        <div>
-                            <h1 className="text-white text-xl font-semibold mt-3">A Decisive Victory for Progressive Policies</h1>
-                            <p>Policies</p>
-                        </div>
-                        <div className="flex items-center justify-between gap-8">
-                            <div className="flex gap-4 pt-4">
-                                <button className="flex items-center gap-2 btn">
-                                    <GiLoveHowl className="text-red-500 text-lg" />
-                                    <p>24.5k</p>
-                                </button>
-                                <button className="flex items-center gap-2 btn">
-                                    <LuSendHorizonal className="text-lg" />
-                                    <p>20</p>
-                                </button>
-                            </div>
-                            <button className="btn btn-outline text-white">Read more</button>
-                        </div>
-                    </div>
-                    <div>
-                        <img className="h-[200px] w-full bg-cover object-fill rounded-lg" src="https://i.ibb.co/1znCryL/digital-composite-image-businessman-touching-device-screen-1048944-11552675.jpg" alt="" />
-                        <div>
-                            <h1 className="text-white text-xl font-semibold mt-3">Tech Giants Unveil Cutting-Edge AI Innovations</h1>
-                            <p>Technology</p>
-                        </div>
-                        <div className="flex items-center justify-between gap-8">
-                            <div className="flex gap-4 pt-4">
-                                <button className="flex items-center gap-2 btn">
-                                    <GiLoveHowl className="text-red-500 text-lg" />
-                                    <p>24.5k</p>
-                                </button>
-                                <button className="flex items-center gap-2 btn">
-                                    <LuSendHorizonal className="text-lg" />
-                                    <p>20</p>
-                                </button>
-                            </div>
-                            <button className="btn btn-outline text-white">Read more</button>
-                        </div>
-                    </div>
-                    <div>
-                        <img className="h-[200px] w-full bg-cover object-fill rounded-lg" src="https://i.ibb.co/bmphSCc/doctor-starting-recovery-plan-with-her-patient-23-2148813498.jpg" alt="" />
-                        <div>
-                            <h1 className="text-white text-xl font-semibold mt-3">COVID-19 Variants</h1>
-                            <p>Health</p>
-                        </div>
-                        <div className="flex items-center justify-between gap-8">
-                            <div className="flex gap-4 pt-4">
-                                <button className="flex items-center gap-2 btn">
-                                    <GiLoveHowl className="text-red-500 text-lg" />
-                                    <p>24.5k</p>
-                                </button>
-                                <button className="flex items-center gap-2 btn">
-                                    <LuSendHorizonal className="text-lg" />
-                                    <p>20</p>
-                                </button>
-                            </div>
-                            <button className="btn btn-outline text-white">Read more</button>
-                        </div>
-                    </div>
-
-                </div> */}
 
                 <div>
                     {news.length > 0 && (
@@ -147,8 +49,18 @@ const News = () => {
                                 <p className="mt-2">
                                     {news[0].description}
                                 </p>
+                                <p className="mt-2">
+                                    <span className="text-blue-500 font-semibold text-2xl">Content: </span>
+                                    {isExpanded ? news[0].content : news[0].content.slice(0, 200) + '...'}
+                                    <span
+                                        className="text-blue-500 cursor-pointer ml-2"
+                                        onClick={toggleReadMore}
+                                    >
+                                        {isExpanded ? 'Show less' : 'Read more'}
+                                    </span>
+                                </p>
                                 <div className="lg:flex gap-8 mt-6">
-                                    
+
                                     <div>
                                         <h3>Publication Date</h3>
                                         <p className="text-white font-bold">{new Date(news[0].publishedAt).toLocaleDateString()}</p>
@@ -198,16 +110,7 @@ const News = () => {
                                     <p>{item.category}</p>
                                 </div>
                                 <div className="flex items-center justify-between gap-8">
-                                    {/* <div className="flex gap-4 pt-4">
-                                        <button className="flex items-center gap-2 btn">
-                                            <GiLoveHowl className="text-red-500 text-lg" />
-                                            <p>24.5k</p>
-                                        </button>
-                                        <button className="flex items-center gap-2 btn">
-                                            <LuSendHorizonal className="text-lg" />
-                                            <p>20</p>
-                                        </button>
-                                    </div> */}
+
                                     <Link to={`/newsDetails/${item._id}`}
                                         className="cursor-pointer mt-4 text-center  w-full bg-gradient-to-r from-rose-900 to-pink-700 hover:scale-105 duration-700 hover:duration-1000 font-semibold transition-all text-white px-10 py-4 rounded-e relative after:[clip-path:polygon(50%_0%,_100%_0,_100%_34%,_100%_100%,_77%_87%,_88%_62%,_64%_75%,_67%_50%,_48%_32%,_82%_18%)] after:hover:duration-700 after:duration-500 after:absolute after:inset-0 after:z-20 after:bg-pink-600 after:translate-x-0 after:hover:-translate-x-1 after:hover:rotate-[100deg] after:origin-bottom-right after:transition-all after:hover:transition-all after:rounded-e after:hover:skew-y-6 after:content-['Hover_ME'] after:hover:content-['SMOOKY_DEV'] after:flex after:items-center after:justify-center after:bg-gradient-to-r after:from-rose-700 after:to-pink-600 after:hover:scale-x-50 before:[clip-path:polygon(26%_0,_38%_17%,_25%_32%,_41%_66%,_27%_81%,_50%_100%,_0_100%,_0%_70%,_0%_35%,_0_0)] before:hover:duration-700 before:duration-500 before:absolute before:inset-0 before:z-20 before:bg-pink-600 before:translate-x-0 before:hover:translate-x-0 before:hover:-rotate-[45deg] before:origin-bottom-left before:transition-all before:hover:transition-all before:rounded-e before:hover:skew-y-6 before:content-['Hover_ME'] before:hover:content-['SMOOKY'] before:flex before:items-center before:justify-center before:bg-gradient-to-l before:from-rose-700 before:to-pink-600"
                                     >

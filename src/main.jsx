@@ -25,6 +25,7 @@ import PostResource from './Dashboard/PostResource';
 import Resources from './components/Resources';
 import BookMark from './Dashboard/BookMark';
 import BookMarkDetails from './components/BookMarkDetails';
+import NewsDetails from './components/NewsDetails';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
         element: <News></News>
       },
       {
+        path: '/newsDetails/:id',
+        element:<NewsDetails></NewsDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`)
+      },
+      {
         path: '/podcasts',
         element: <Podcasts></Podcasts>
       },
@@ -47,11 +53,11 @@ const router = createBrowserRouter([
         path: '/resNav',
         element: <ResourcesNav></ResourcesNav>
       },
-       {
-        path:'resourcesData',
-        element:<Resources></Resources>,
-        loader: ()=> fetch('http://localhost:5000/resource')
-       },
+      {
+        path: 'resourcesData',
+        element: <Resources></Resources>,
+        loader: () => fetch('http://localhost:5000/resource')
+      },
       {
         path: '/login',
         element: <Login></Login>
@@ -100,12 +106,12 @@ const router = createBrowserRouter([
         element: <BlogPostForm></BlogPostForm>
       },
       {
-        path:'myPost',
-        element:<MyPost></MyPost>
+        path: 'myPost',
+        element: <MyPost></MyPost>
       },
       {
-        path:'bookMark',
-        element:<BookMark></BookMark>
+        path: 'bookMark',
+        element: <BookMark></BookMark>
       },
       {
         path: 'bookMarkDetails/:id',
@@ -114,8 +120,8 @@ const router = createBrowserRouter([
       },
       // admin related
       {
-        path:'postResource',
-        element:<PostResource></PostResource>
+        path: 'postResource',
+        element: <PostResource></PostResource>
       }
     ]
   }

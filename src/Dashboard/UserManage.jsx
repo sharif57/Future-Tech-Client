@@ -50,6 +50,17 @@ const UserManage = () => {
 
     return (
         <div>
+            <div className="bg-[#191919] lg:py-16  lg:p-0 p-4">
+                <div className="container mx-auto">
+                    <div className="lg:flex  justify-between items-center ">
+                        <div className="lg:w-2/3">
+                            <button className="bg-[#333333] p-2 rounded-md text-white font-medium">Discover a World of Insight                            </button>
+                            <h1 className="lg:text-5xl text-2xl font-semibold text-white mt-3">Access Comprehensive Resources with FutureTech</h1>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
             <div className="flex flex-col">
                 <div className="-m-1.5 overflow-x-auto">
                     <div className="p-1.5 min-w-full inline-block align-middle">

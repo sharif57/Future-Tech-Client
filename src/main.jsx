@@ -26,6 +26,7 @@ import Resources from './components/Resources';
 import BookMark from './Dashboard/BookMark';
 import BookMarkDetails from './components/BookMarkDetails';
 import NewsDetails from './components/NewsDetails';
+import UserManage from './Dashboard/UserManage';
 
 const router = createBrowserRouter([
   {
@@ -122,6 +123,10 @@ const router = createBrowserRouter([
       {
         path: 'postResource',
         element: <PostResource></PostResource>
+      },
+      {
+        path:'userManagement',
+        element:<UserManage></UserManage>
       }
     ]
   }

@@ -73,7 +73,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="py-6 text-sm text-center dark:text-gray-600"> <aside>
-                <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+                <p>Copyright © {new Date().getFullYear()} - All right reserved by Sharif Mahamud</p>
             </aside></div>
         </footer>
     </div>;

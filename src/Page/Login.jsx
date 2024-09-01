@@ -119,18 +119,22 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
+import UseAxiosPublic from "../hooks/useAxiosPublic";
+import GoogleLogIn from "../AuthProvider/GoogleLogIn";
 
 const Login = () => {
-    const { googleLogin, loginUser } = useContext(AuthContext);
+    const { googleLogin, loginUser, user } = useContext(AuthContext);
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const axiosPublic = UseAxiosPublic()
+    // console.log(user?.email);
 
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        
+
         loginUser(email, password)
             .then(() => {
                 navigate(location?.state ? location.state : '/');
@@ -154,22 +158,29 @@ const Login = () => {
             });
     };
 
+
     const handleGoogleLogin = () => {
         googleLogin()
-            .then(() => {
-                navigate(location?.state ? location.state : '/');
+            .then(result => {
+                console.log(result.user);
+                const userInfo = {
+                    email: result.user?.email,
+                    name: result.user?.displayName
+                };
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        if (res.data.insertedId) {
+                            console.log('User added to the database');
+                            navigate('/');
+                        } else {
+                            console.log(res.data.message); // Handle the case where the user already exists
+                        }
+                    });
             })
             .catch(error => {
-                setError(error.message);
-                Swal.fire({
-                    title: 'Error!',
-                    text: error.message,
-                    icon: 'error',
-                    confirmButtonText: 'Try Again'
-                });
+                console.error('Login failed:', error.message);
             });
     };
-
     return (
         <div>
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -232,6 +243,7 @@ const Login = () => {
                         <FcGoogle className="size-10" />
                     </button>
 
+
                     <p className="mt-10 text-center text-sm text-white">
                         Not a member?{' '}
                         <Link to={'/register'} className="font-semibold leading-6 px-2 text-indigo-600 hover:text-indigo-500">
@@ -245,3 +257,4 @@ const Login = () => {
 };
 
 export default Login;
+

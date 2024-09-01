@@ -13,7 +13,7 @@ const NewsDetails = () => {
     const items = useLoaderData()
     console.log(items.length);
     return <div>
-        <div className="lg:flex justify-center items-center  mt-12 p-4 lg:mb-10">
+        <div className="lg:flex justify-center items-center  mt-12 p-4 lg:mb-10   mx-auto container">
             <div className="lg:w-2/5">
                 <img className="lg:h-[300px] lg:w-[600px] lg:rounded-t-3xl rounded-t-xl" src={items.urlToImage} />
             </div>

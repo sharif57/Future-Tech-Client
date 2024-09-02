@@ -8,6 +8,7 @@ import { GoReport } from "react-icons/go";
 import { IoMdNotifications } from "react-icons/io";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import UseAdmin from "../hooks/useAdmin";
 
 
 const Dashboard = () => {
@@ -31,9 +32,9 @@ const Dashboard = () => {
 
     }
 
-    const isAdmin = true;
-    // const [isAdmin] = UseAdmin();
-    console.log(isAdmin);
+    // const isAdmin = true;
+    const [isAdmin] = UseAdmin();
+    // console.log(isAdmin);
 
     return (
         <div className="flex ">

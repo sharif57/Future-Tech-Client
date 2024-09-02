@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import { MdAdminPanelSettings } from "react-icons/md";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
+import { GrUserAdmin } from "react-icons/gr";
+
 
 const UserManage = () => {
-    const [ManageUsers, setManageUsers] = useState([]);
+    const axiosSecure = useAxiosSecure()
+    // const [ManageUsers, setManageUsers] = useState([]);
 
     const handleDelete = _id => {
         Swal.fire({
@@ -42,15 +47,34 @@ const UserManage = () => {
     }
 
 
-    useEffect(() => {
-        fetch('http://localhost:5000/users')
-            .then((res) => res.json())
-            .then((data) => setManageUsers(data));
-    }, []);
+    const handleMakeAdmin = user => {
+        axiosSecure.patch(`/users/admin/${user._id}`)
+            .then(res => {
+                console.log(res.data);
+                if (res.data.modifiedCount > 0) {
+                    refetch()
+                    Swal.fire({
+                        position: "top-center",
+                        icon: "success",
+                        title: `${user.name} is an Admin Now!`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
+    }
+
+    const { data: users = [], refetch } = useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const res = await axiosSecure.get('/users')
+            return res.data
+        } 
+    })
 
     return (
         <div>
-            <div className="bg-[#191919] lg:py-16  lg:p-0 p-4">
+            <div className="bg-[#191919] lg:py-5  lg:p-0 p-4">
                 <div className="container mx-auto">
                     <div className="lg:flex  justify-between items-center ">
                         <div className="lg:w-2/3">
@@ -140,8 +164,8 @@ const UserManage = () => {
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-                                        {ManageUsers.map((user) => (
-                                            <tr key={user.id}>
+                                        {users.map((user) => (
+                                            <tr key={user._id}>
                                                 <td className="py-3 ps-4">
                                                     <div className="flex items-center h-5">
                                                         <input
@@ -165,13 +189,21 @@ const UserManage = () => {
                                                     {user.email}
                                                 </td>
                                                 <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                    <button
-                                                        type="button"
-                                                        className="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:text-blue-400"
-                                                    >
-                                                        <MdAdminPanelSettings className="size-11" />
-                                                    </button>
+                                                    {user.role === 'admin' ? (
+                                                        <button className="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:text-blue-400"
+                                                        ><MdAdminPanelSettings className="text-xl size-10" />
+                                                        </button>
+                                                    ) : (
+                                                        <button
+                                                            onClick={() => handleMakeAdmin(user)} 
+                                                            type="button"
+                                                            className="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:text-blue-400"
+                                                        >
+                                                            <GrUserAdmin className="text-xl size-10"  />
+                                                        </button>
+                                                    )}
                                                 </td>
+
                                                 <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
 
                                                     <button

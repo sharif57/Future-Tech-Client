@@ -1,4 +1,3 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import {
@@ -27,6 +26,10 @@ import BookMark from './Dashboard/BookMark';
 import BookMarkDetails from './components/BookMarkDetails';
 import NewsDetails from './components/NewsDetails';
 import UserManage from './Dashboard/UserManage';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient()
+
 
 const router = createBrowserRouter([
   {
@@ -43,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/newsDetails/:id',
-        element:<NewsDetails></NewsDetails>,
+        element: <NewsDetails></NewsDetails>,
         loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`)
       },
       {
@@ -125,8 +128,8 @@ const router = createBrowserRouter([
         element: <PostResource></PostResource>
       },
       {
-        path:'userManagement',
-        element:<UserManage></UserManage>
+        path: 'userManagement',
+        element: <UserManage></UserManage>
       }
     ]
   }
@@ -134,6 +137,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <AuthProvider>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </AuthProvider>
 )

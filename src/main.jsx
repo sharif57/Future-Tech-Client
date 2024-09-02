@@ -29,6 +29,7 @@ import UserManage from './Dashboard/UserManage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AdminProfile from './Dashboard/AdminProfile';
 import Performance from './Dashboard/Performance';
+import PostUpdate from './Dashboard/PostUpdate';
 
 const queryClient = new QueryClient()
 
@@ -123,6 +124,11 @@ const router = createBrowserRouter([
         path: 'bookMarkDetails/:id',
         element: <BookMarkDetails></BookMarkDetails>,
         loader: ({ params }) => fetch(`http://localhost:5000/bookMarks/${params.id}`)
+      },
+      {
+        path: 'update/:id',
+        element:<PostUpdate></PostUpdate>,
+        loader:({params})=> fetch(`http://localhost:5000/post/${params.id}`)
       },
       // admin related
       {

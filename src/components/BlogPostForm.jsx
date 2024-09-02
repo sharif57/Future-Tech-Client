@@ -19,7 +19,7 @@ const BlogPostForm = () => {
         const description = e.target.description.value;
 
         const newPost = { name, email, image, title, category, introduction, currentTime, photo, description }
-        // console.log(newPost);
+        console.log(newPost);
 
         fetch('http://localhost:5000/post', {
             method: 'POST',
@@ -65,11 +65,10 @@ const BlogPostForm = () => {
 
                         {/* category */}
                         <div className="mb-4">
-                            <label className="block text-white  font-medium mb-2" htmlFor="title">
+                            <label className="block text-white  font-medium mb-2" >
                                 Category
                             </label>
                             <input
-                                id="title"
                                 type="text"
                                 name="category"
                                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -78,11 +77,10 @@ const BlogPostForm = () => {
 
                         {/* Title */}
                         <div className="mb-4">
-                            <label className="block text-white  font-medium mb-2" htmlFor="title">
+                            <label className="block text-white  font-medium mb-2" >
                                 Title
                             </label>
                             <input
-                                id="title"
                                 type="text"
                                 name="title"
                                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -97,25 +95,10 @@ const BlogPostForm = () => {
                                 Introduction
                             </label>
                             <textarea
-                                id="introduction"
                                 name="introduction"
                                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />
                         </div>
-
-
-                        {/* Table of Contents */}
-                        {/* <div className="mb-4">
-                            <label className="block text-white  font-medium mb-2" htmlFor="table_of_contents">
-                                Table of Contents
-                            </label>
-                            <textarea
-                                id="table_of_contents"
-                                name="table"
-                                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-
-                            />
-                        </div> */}
 
                         {/* Image URL */}
                         <div className="mb-4">
@@ -123,7 +106,6 @@ const BlogPostForm = () => {
                                 Image URL
                             </label>
                             <input
-                                id="image"
                                 type="text"
                                 name="photo"
                                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -137,7 +119,6 @@ const BlogPostForm = () => {
                                 Description
                             </label>
                             <textarea
-                                id="description"
                                 name="description"
                                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 

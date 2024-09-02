@@ -100,7 +100,7 @@ const MyPost = () => {
                             }</td>
 
                             <th className="flex flex-row gap-4">
-                                <Link to={`/update/${p._id}`}
+                                <Link to={`/dashboard/update/${p._id}`}
                                     className="group relative inline-block text-sm font-medium text-black focus:outline-none focus:ring"
 
                                 >

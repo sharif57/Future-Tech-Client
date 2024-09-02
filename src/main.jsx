@@ -27,6 +27,7 @@ import BookMarkDetails from './components/BookMarkDetails';
 import NewsDetails from './components/NewsDetails';
 import UserManage from './Dashboard/UserManage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import AdminProfile from './Dashboard/AdminProfile';
 
 const queryClient = new QueryClient()
 
@@ -124,8 +125,8 @@ const router = createBrowserRouter([
       },
       // admin related
       {
-        path: 'postResource',
-        element: <PostResource></PostResource>
+        path: 'adminProfile',
+        element: <AdminProfile></AdminProfile>
       },
       {
         path: 'userManagement',

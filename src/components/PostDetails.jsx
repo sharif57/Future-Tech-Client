@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FaRegCommentDots } from "react-icons/fa";
 import { GiLoveHowl } from "react-icons/gi";
 import { LuSendHorizonal } from "react-icons/lu";
@@ -7,6 +8,8 @@ const PostDetails = () => {
 
     const items = useLoaderData()
     // console.log(items);
+
+    const [counts, setCounts] = useState(0)
 
     return <div>
         <div className="container mx-auto p-2">
@@ -25,9 +28,9 @@ const PostDetails = () => {
                 </div>
                 <div className="lg:w-1/3">
                     <div className="flex gap-2 pt-4">
-                        <button className="btn space-x-2">
+                        <button onClick={()=> setCounts(counts +1)} className="btn space-x-2">
                             <GiLoveHowl className="text-red-500 size-6" />
-                            <p>24.5k</p>
+                            <p>{counts}k</p>
                         </button>
                         <button className="btn space-x-2">
                             <FaRegCommentDots className="size-6" />

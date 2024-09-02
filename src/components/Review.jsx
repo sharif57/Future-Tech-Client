@@ -2,7 +2,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Review = () => {
-    return <div className="bg-[#191919] py-16 lg:px-16 lg:p-0 p-4" >
+    return <div className="bg-[#191919] lg:py-16 lg:px-16 lg:p-0 p-4" >
         <div className="container mx-auto">
             <div className="lg:flex  justify-between items-center ">
                 <div className="lg:w-2/3">

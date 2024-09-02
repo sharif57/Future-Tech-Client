@@ -1,10 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const BlogPostForm = () => {
 
     const { user } = useContext(AuthContext)
+    const navigate = useNavigate()
+
 
     const handlePost = (e) => {
         e.preventDefault()
@@ -36,6 +39,7 @@ const BlogPostForm = () => {
                             icon: 'success',
                             confirmButtonText: 'Cool'
                         });
+                        navigate('/dashboard/myPost')
                     }
                     e.target.reset()
                 }

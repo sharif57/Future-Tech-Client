@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const PostUpdate = () => {
     const { user } = useContext(AuthContext)
     const items = useLoaderData()
+    const navigate = useNavigate()
 
 
     const handleUpdate = (e) => {
@@ -21,27 +22,7 @@ const PostUpdate = () => {
         const description = e.target.description.value;
 
         const newPost = { name, email, image, title, category, introduction, currentTime, photo, description }
-        // console.log(newPost);
-
-        // fetch('http://localhost:5000/post', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(newPost)
-        // })
-        // .then(res => res.json())
-        // .then(data => {
-        //     if (data.insertedId) {
-        //         if (data.insertedId) {
-        //             Swal.fire({
-        //                 title: 'Success!',
-        //                 text: 'Post Added Successfully',
-        //                 icon: 'success',
-        //                 confirmButtonText: 'Cool'
-        //             });
-        //         }
-        //         e.target.reset()
-        //     }
-        // })
+      
 
         fetch(`http://localhost:5000/post/${items._id}`, {
             method: 'PUT',
@@ -60,6 +41,7 @@ const PostUpdate = () => {
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
+                    navigate('/dashboard/myPost')
                 }
             })
     }
@@ -72,7 +54,7 @@ const PostUpdate = () => {
                 <div className="bg-[#141414] shadow-lg rounded-lg p-8  w-full">
                     <div className="flex justify-around items-center shadow-lg mb-6 bg-[#191919] p-8 rounded-lg hover:bg-gray-600">
                         <div>
-                            <h1 className="lg:text-4xl font-semibold mb-6 text-white text-center"> Post Your Blog</h1>
+                            <h1 className="lg:text-4xl font-semibold mb-6 text-white text-center"> Your Blog Post Update Now !</h1>
                             <p className="text-center mt-2 font-semibold">Decapitation in reality and fine art: A review</p>
                         </div>
                         <div className="flex gap-4 items-center">
@@ -157,7 +139,7 @@ const PostUpdate = () => {
                         {/* Submit Button */}
                         <div className="text-center">
                             <button className=" w-1/2 mx-auto text-black text-xl bg-yellow-400 font-medium py-2 px-4 btn btn-outline focus:outline-none focus:ring-2 ">
-                                Post Your Blog
+                                 Your Blog Post Update Now!
                             </button>
                         </div>
                     </form>

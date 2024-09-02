@@ -20,7 +20,6 @@ import PostDetails from './components/PostDetails';
 import Dashboard from './Dashboard/Dashboard';
 import Profile from './Dashboard/Profile';
 import MyPost from './Dashboard/MyPost';
-import PostResource from './Dashboard/PostResource';
 import Resources from './components/Resources';
 import BookMark from './Dashboard/BookMark';
 import BookMarkDetails from './components/BookMarkDetails';

@@ -28,6 +28,7 @@ import NewsDetails from './components/NewsDetails';
 import UserManage from './Dashboard/UserManage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AdminProfile from './Dashboard/AdminProfile';
+import Performance from './Dashboard/Performance';
 
 const queryClient = new QueryClient()
 
@@ -131,6 +132,10 @@ const router = createBrowserRouter([
       {
         path: 'userManagement',
         element: <UserManage></UserManage>
+      },
+      {
+        path: 'performance',
+        element:<Performance></Performance>
       }
     ]
   }

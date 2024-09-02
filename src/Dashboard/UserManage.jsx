@@ -74,7 +74,7 @@ const UserManage = () => {
 
     return (
         <div>
-            <div className="bg-[#191919] lg:py-5  lg:p-0 p-4">
+            <div className="bg-[#191919] lg:py-5 mb-9 lg:p-0 p-4">
                 <div className="container mx-auto">
                     <div className="lg:flex  justify-between items-center ">
                         <div className="lg:w-2/3">
@@ -283,3 +283,83 @@ const UserManage = () => {
 };
 
 export default UserManage;
+
+
+// <div className="flex justify-center items-center gap-10">
+
+// <div
+//     className="hover:-translate-y-2 group bg-neutral-50 duration-500 w-44 h-44 flex text-neutral-600 flex-col justify-center items-center relative rounded-xl overflow-hidden shadow-md"
+// >
+//     <svg
+//         viewBox="0 0 200 200"
+//         xmlns="http://www.w3.org/2000/svg"
+//         className="absolute blur z-10 fill-red-300 duration-500 group-hover:blur-none group-hover:scale-105"
+//     >
+//         <path
+//             transform="translate(100 100)"
+//             d="M39.5,-49.6C54.8,-43.2,73.2,-36.5,78.2,-24.6C83.2,-12.7,74.8,4.4,69,22.5C63.3,40.6,60.2,59.6,49.1,64.8C38.1,70,19,61.5,0.6,60.7C-17.9,59.9,-35.9,67,-47.2,61.9C-58.6,56.7,-63.4,39.5,-70,22.1C-76.6,4.7,-84.9,-12.8,-81.9,-28.1C-79,-43.3,-64.6,-56.3,-49.1,-62.5C-33.6,-68.8,-16.8,-68.3,-2.3,-65.1C12.1,-61.9,24.2,-55.9,39.5,-49.6Z"
+//         ></path>
+//     </svg>
+//     <div className="z-20 flex flex-col justify-center items-center">
+//         <span className="font-bold text-6xl ml-2">{post.length}</span>
+//         <p className="font-bold">Posts</p>
+//     </div>
+// </div>
+
+// <div
+//     className="hover:-translate-y-2 group bg-neutral-50 duration-500 w-44 h-44 flex text-neutral-600 flex-col justify-center items-center relative rounded-xl overflow-hidden shadow-md"
+// >
+//     <svg
+//         viewBox="0 0 200 200"
+//         xmlns="http://www.w3.org/2000/svg"
+//         className="absolute blur z-10 fill-orange-300 duration-500 group-hover:blur-none group-hover:scale-105"
+//     >
+//         <path
+//             transform="translate(100 100)"
+//             d="M45.4,-55.3C59.5,-47.6,70.6,-33.4,76.3,-16.4C81.9,0.6,82.1,19.6,73.5,32.9C64.9,46.2,47.4,53.8,31.3,58.7C15.1,63.6,-0.7,65.8,-17.1,63.1C-33.5,60.4,-50.5,52.9,-60.6,40.8C-70.8,28.6,-74.2,11.9,-72.6,-4.1C-71,-20,-64.4,-35.3,-53.2,-43.8C-41.9,-52.2,-26,-54.8,-10.7,-54.2C4.5,-53.6,9,-49.7,45.4,-55.3Z"
+//         ></path>
+//     </svg>
+//     <div className="z-20 flex flex-col justify-center items-center">
+//         <span className="font-bold text-6xl ml-2">{users.length}</span>
+//         <p className="font-bold">Users</p>
+//     </div>
+// </div>
+
+// <div
+//     className="hover:-translate-y-2 group bg-neutral-50 duration-500 w-44 h-44 flex text-neutral-600 flex-col justify-center items-center relative rounded-xl overflow-hidden shadow-md"
+// >
+//     <svg
+//         viewBox="0 0 200 200"
+//         xmlns="http://www.w3.org/2000/svg"
+//         className="absolute blur z-10 fill-indigo-300 duration-500 group-hover:blur-none group-hover:scale-105"
+//     >
+//         <path
+//             transform="translate(100 100)"
+//             d="M36.3,-54.3C50,-46.3,65.8,-38.8,70.5,-27.9C75.3,-17.1,69.1,-2.8,64.8,13.8C60.5,30.4,58.1,49.3,47.2,60.4C36.3,71.4,17.9,74.7,0.3,74.4C-17.3,74.1,-34.5,70.2,-43.6,60.4C-52.6,50.5,-53.6,34.8,-53.4,20.8C-53.2,6.8,-51.9,-5.4,-52,-18.2C-52,-31.1,-53.3,-44.7,-46.4,-55.1C-39.5,-65.5,-24.5,-72.7,-10.7,-68.8C3,-64.9,6,-49.8,36.3,-54.3Z"
+//         ></path>
+//     </svg>
+//     <div className="z-20 flex flex-col justify-center items-center">
+//         <span className="font-bold text-6xl ml-2">{reviews.length}</span>
+//         <p className="font-bold">Reviews</p>
+//     </div>
+// </div>
+
+// <div
+//     className="hover:-translate-y-2 group bg-neutral-50 duration-500 w-44 h-44 flex text-neutral-600 flex-col justify-center items-center relative rounded-xl overflow-hidden shadow-md"
+// >
+//     <svg
+//         viewBox="0 0 200 200"
+//         xmlns="http://www.w3.org/2000/svg"
+//         className="absolute blur z-10 fill-green-300 duration-500 group-hover:blur-none group-hover:scale-105"
+//     >
+//         <path
+//             transform="translate(100 100)"
+//             d="M35.4,-47.2C47.2,-37.1,57.9,-24.4,60.7,-10.2C63.4,4,58.3,19.7,51.2,35.6C44.2,51.5,35.2,67.6,21.3,72.6C7.4,77.5,-11.3,71.4,-24.1,61.3C-37,51.2,-44.1,37.2,-49.2,23.7C-54.3,10.3,-57.4,-2.5,-54.4,-14.2C-51.4,-25.9,-42.4,-36.5,-31.5,-46.3C-20.6,-56.1,-10.3,-65.2,2.1,-67.7C14.5,-70.2,29,-66.2,35.4,-47.2Z"
+//         ></path>
+//     </svg>
+//     <div className="z-20 flex flex-col justify-center items-center">
+//         <span className="font-bold text-6xl ml-2">{bookMark.length}</span>
+//         <p className="font-bold">Bookmarks</p>
+//     </div>
+// </div>
+// </div>

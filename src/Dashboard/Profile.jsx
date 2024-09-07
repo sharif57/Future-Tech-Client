@@ -1,8 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import axios from "axios";
 
-import { RiExchangeDollarLine, RiExchangeFundsLine } from "react-icons/ri";
+import {  RiExchangeFundsLine } from "react-icons/ri";
 import { MdChangeCircle } from "react-icons/md";
 import { Link } from "react-router-dom";
 

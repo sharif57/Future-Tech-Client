@@ -29,6 +29,9 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AdminProfile from './Dashboard/AdminProfile';
 import Performance from './Dashboard/Performance';
 import PostUpdate from './Dashboard/PostUpdate';
+import PrivateRoute from './PrivateRoutes/PrivateRoute';
+import AdminRoute from './AdminRoute/AdminRoute';
+import Error from './Page/Error';
 
 const queryClient = new QueryClient()
 
@@ -37,6 +40,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: '/',
@@ -48,7 +52,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/newsDetails/:id',
-        element: <NewsDetails></NewsDetails>,
+        element: <PrivateRoute><NewsDetails></NewsDetails></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`)
       },
       {
@@ -57,11 +61,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/resNav',
-        element: <ResourcesNav></ResourcesNav>
+        element: <PrivateRoute> <ResourcesNav></ResourcesNav></PrivateRoute>
       },
       {
         path: 'resourcesData',
-        element: <Resources></Resources>,
+        element: <PrivateRoute> <Resources></Resources></PrivateRoute>,
         loader: () => fetch('http://localhost:5000/resource')
       },
       {
@@ -73,34 +77,30 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
-        path: '/blogPostForm',
-        element: <BlogPostForm></BlogPostForm>
-      },
-      {
         path: '/review2',
         element: <Review2></Review2>,
         loader: () => fetch('http://localhost:5000/reviews')
       },
       {
         path: '/allReviews',
-        element: <AllReviews></AllReviews>,
+        element: <PrivateRoute><AllReviews></AllReviews></PrivateRoute>,
         loader: () => fetch('http://localhost:5000/reviews')
       },
       {
         path: '/allPostData',
-        element: <AllPostData></AllPostData>,
+        element: <PrivateRoute><AllPostData></AllPostData></PrivateRoute>,
         loader: () => fetch('http://localhost:5000/post')
       },
       {
         path: '/postDetails/:id',
-        element: <PostDetails></PostDetails>,
+        element: <PrivateRoute><PostDetails></PostDetails></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/post/${params.id}`)
       }
     ]
   },
   {
     path: "/dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children: [
       // user related
       {
@@ -126,21 +126,21 @@ const router = createBrowserRouter([
       },
       {
         path: 'update/:id',
-        element:<PostUpdate></PostUpdate>,
-        loader:({params})=> fetch(`http://localhost:5000/post/${params.id}`)
+        element: <PostUpdate></PostUpdate>,
+        loader: ({ params }) => fetch(`http://localhost:5000/post/${params.id}`)
       },
       // admin related
       {
         path: 'adminProfile',
-        element: <AdminProfile></AdminProfile>
+        element: <AdminRoute><AdminProfile></AdminProfile></AdminRoute>
       },
       {
         path: 'userManagement',
-        element: <UserManage></UserManage>
+        element: <AdminRoute> <UserManage></UserManage></AdminRoute>
       },
       {
         path: 'performance',
-        element:<Performance></Performance>
+        element:<AdminRoute><Performance></Performance></AdminRoute>
       }
     ]
   }

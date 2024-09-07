@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { FaArrowRight, FaBookmark, FaRegCommentDots } from "react-icons/fa";
+import { FaArrowRight, FaBookmark, FaRegBookmark, FaRegCommentDots } from "react-icons/fa";
 import { GiLoveHowl } from "react-icons/gi";
-import { LuSendHorizonal } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
@@ -52,6 +51,14 @@ const Posts = () => {
             });
     };
 
+    const [isAlternateLayout, setIsAlternateLayout] = useState(false);
+
+    // Function to toggle between layouts
+    const toggleLayout = () => {
+        setIsAlternateLayout(!isAlternateLayout);
+    };
+
+
 
     return <div className="bg-[#141414]">
         <div className="container mx-auto">
@@ -82,7 +89,7 @@ const Posts = () => {
                                     {post.introduction.slice(0, 52)}...
                                 </h1>
                                 <p className="text-gray-400">{post.description.slice(0, 100)}...</p>
-                             
+
 
                                 <div className="flex gap-2 pt-4">
                                     <button className="btn space-x-2">
@@ -93,10 +100,12 @@ const Posts = () => {
                                         <FaRegCommentDots className="size-6" />
                                         <p>50</p>
                                     </button>
-                                   
+
                                     <form onSubmit={(e) => handlePost(e, post)}>
-                                        <button type="submit" className="flex items-center space-x-2 btn ">
-                                            <FaBookmark className="size-6 text-yellow-400 " />
+                                        <button type="submit" onClick={toggleLayout} className="flex items-center space-x-2 btn ">
+                                            
+                                            {isAlternateLayout ? <FaBookmark className="size-6 text-yellow-400 " /> : <FaRegBookmark className="size-6" />                                            }
+
                                         </button>
                                     </form>
                                 </div>

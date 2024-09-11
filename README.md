@@ -23,12 +23,13 @@ VS Code: For code development and debugging.
 
 <br/>
 
-#The FutureTech blog website project also incorporates the following UI components and libraries:
+# The FutureTech blog website project also incorporates the following UI components and libraries:
 
 DaisyUI: For accessible and customizable UI components built on top of Tailwind CSS.
 Mamba UI: For pre-built, responsive UI elements to enhance the design.
 React Icons: For easy integration of scalable vector icons.
 Uiverse: For modern and interactive UI effects, adding dynamic visuals to the site.
+<br/>
 
 <img  width="" src="https://i.ibb.co.com/0n83mNX/screencapture-future-tech-blog-netlify-app-2024-09-11-12-19-16.png" />
 
